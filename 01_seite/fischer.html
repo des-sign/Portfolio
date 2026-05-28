@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>des_sign</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+
+<style>
+
+/* FONT */
+@font-face {
+  font-family: "Temeraire";
+  src: url("../02_fonts/Temeraire Display Bk.ttf");
+}
+
+
+
+/* BASIC */
+body {
+  margin: 0;
+  max-width: 1500px;
+  height: 1080px; 
+  background: black;
+  color: white;
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+* {
+  color: rgb(255, 255, 255);
+}
+
+/* ================= GRID ================= */
+.section {
+  width: 100%;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  padding: 40px 40px;
+}
+
+/* ================= HEADER ================= */
+.logo img {
+  height: 11px;
+}
+
+/* BURGER */
+.burger {
+  grid-column: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  align-items: flex-start;
+  position: relative;
+  z-index: 200;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+  display: block;
+  transform-origin: center;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* MENÜ */
+.nav-menu {
+  grid-column: 4;
+  display: none;
+  position: absolute;
+  gap: 100px;
+  top: 0;
+  right: 50px;
+  width: 220px;
+  height: 100%;
+  flex-direction: column;
+  justify-self: start;
+  justify-content: flex-start;
+  padding: 210px 0 0 0;
+  box-sizing: border-box;
+  z-index: 100;
+  align-items: flex-start;
+}
+
+.nav-menu.open {
+  display: flex;
+}
+
+.nav-menu a {
+  font-size: 35px;
+  letter-spacing: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  width: fit-content;
+  padding-bottom: 18px;
+  border-bottom: 3px solid white;
+  line-height: 1.57;
+  color: #ffffff;
+}
+
+.nav-menu a:hover {
+  color: #FF00BA;
+}
+
+
+/* Content-Section */
+.section:last-of-type .inner {
+  padding-top: 0px;
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+
+
+<!-- ================= HEADER ================= -->
+<div class="section" style="position: relative;">
+  <div class="inner">
+
+    <div class="logo">
+      <a href="index.html">
+        <img src="../05_txt-grafik/des_sign_weiss.png">
+      </a>
+    </div>
+
+    <div></div>
+    <div></div>
+
+    <div class="burger" id="burger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-menu" id="navMenu">
+      <a href="index.html#design">DESIGN</a>
+      <a href="index.html#focus">FOCUS</a>
+      <a href="index.html#story">STORY</a>
+      <a href="index.html#hallo">HALLO</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= CONTENT ================= -->
+<div class="section">
+  <div class="inner">
+
+    <!-- LINKS: Tags -->
+    <div style="display:flex; flex-direction:column; justify-content:flex-end; padding-bottom: 0;">
+      <div style="font-size:8px; line-height:2.0;">
+        <div># COVER</div>
+        <div># FARBE</div>
+        <div># FORM</div>
+      </div>
+    </div>
+
+    <!-- MITTE: Bilder -->
+    <div style="grid-column: span 2; padding-right: 0px; padding-left: 70px;">
+      <div style="position:relative;">
+        <img id="img1" src="../04_portfolio/Cover-Entwürfe_Mein Fischer.jpg"
+          style="width:95%; height:auto; display:block; transition:opacity 0.3s ease;">
+        <img id="img2" src="../04_portfolio/Cover-Entwürfe_Mein Fischer_2.jpg"
+          style="width:95%; height:auto; display:block; position:absolute; top:0; left:0; opacity:0; transition:opacity 0.3s ease;">
+      </div>
+    </div>
+
+    <!-- RECHTS: Kästchen + Text -->
+    <div style="display:flex; flex-direction:column; justify-content:space-between;">
+
+      <div style="display:flex; flex-direction:row; gap:15px;">
+        <div onclick="showImg(1)"
+          style="width:30px; height:30px; background:#E31C93; cursor:pointer;" title="klick mich!"></div>
+        <div onclick="showImg(2)"
+          style="width:30px; height:30px; background:#E2E736; cursor:pointer;" title="klick mich!"></div>
+      </div>
+
+      <div style="font-size:10px; line-height:1.7;">
+        <p style="margin:0 0 15px;"><strong>Cover-Newsletter</strong></p>
+        <p style="margin:0;">
+    
+        Farbintensive Inszenierung, klar gesetzt,<br>
+        neongelbe Headline, die Akzente setzt.<br><br>
+
+        Reduziert im Aufbau, strukturiert im Blick,<br>
+        entsteht im Ausdruck und Ordnung die Dynamik.<br><br>
+
+        Prägnant im Auftreten, zeitgemäß im Look,<br>
+        ein Spiel aus Spannung — bewusst und mit Druck.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('burger').classList.toggle('open');
+    document.getElementById('navMenu').classList.toggle('open');
+  }
+
+  function showImg(n) {
+    document.getElementById('img1').style.opacity = n === 1 ? '1' : '0';
+    document.getElementById('img2').style.opacity = n === 2 ? '1' : '0';
+  }
+</script>
+
+</body>
+</html>
