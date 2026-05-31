@@ -123,11 +123,25 @@ body {
   padding-top: 0px;
 }
 
+
   @media (max-width: 768px) {
-  body {
-    zoom: 0.28;
-    overflow-x: hidden;
+  .inner {
+    grid-template-columns: 1fr !important;
   }
+
+  .inner > div {
+    grid-column: 1 !important;
+  }
+
+  .inner > div:nth-child(1) { order: 3; }
+  .inner > div:nth-child(2) { order: 1; }
+  .inner > div:nth-child(3) { order: 2; }
+
+  .inner > div:nth-child(3) > div:first-child > div {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
 }
 
 </style>
