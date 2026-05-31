@@ -1,21 +1,27 @@
+Mobil
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>des_sign</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 
 <style>
 
-/* FONT */
 @font-face {
   font-family: "Temeraire";
   src: url("../02_fonts/Temeraire Display Bk.ttf");
 }
 
-/* BASIC */
 body {
   margin: 0;
   background: black;
@@ -23,28 +29,20 @@ body {
   font-family: 'Roboto Flex', sans-serif;
 }
 
-/* FORCE WHITE */
-* {
-  color: white;
-}
+* { color: white; }
 
 /* ================= GRID ================= */
-.section {
-  width: 100%;
-}
+.section { width: 100%; }
 
 .inner {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 1fr;
-  padding: 40px 40px;
+  padding: 40px 40px 0 40px;
 }
 
 /* ================= HEADER ================= */
-.logo img {
-  height: 12px;
-}
+.logo img { height: 11px; }
 
-/* BURGER */
 .burger {
   grid-column: 4;
   display: flex;
@@ -58,117 +56,66 @@ body {
 
 .burger span {
   width: 26px;
-  height: 4px;
+  height: 3px;
   background: white;
   transition: all 0.3s ease;
   display: block;
   transform-origin: center;
 }
 
-.burger.open span:nth-child(1) {
-  transform: translateY(5px) rotate(45deg);
-}
+.burger.open span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+.burger.open span:nth-child(2) { transform: translateY(-5px) rotate(-45deg); }
 
-.burger.open span:nth-child(2) {
-  transform: translateY(-5px) rotate(-45deg);
-}
-
-/* MENÜ */
 .nav-menu {
   grid-column: 4;
   display: none;
   position: absolute;
-  gap: 80px;
-
-  top: 0; 
-  right: 55px;
-  
+  gap: 60px;
+  top: 20px;
+  right: 150px;
   width: 220px;
   height: 100%;
   flex-direction: column;
-
   justify-self: start;
   justify-content: flex-start;
-  
-  padding: 310px 0 0 0;
+  padding: 50px 0 0 150px;
   box-sizing: border-box;
   z-index: 100;
-
   align-items: flex-start;
 }
 
-.nav-menu.open {
-  display: flex;
-}
+.nav-menu.open { display: flex; }
 
 .nav-menu a {
-  font-size: 35px;
+  font-size: 20px;
   letter-spacing: 4px;
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
   width: fit-content;
-  padding-bottom: 18px;
+  padding-bottom: 30px;
   border-bottom: 3px solid white;
   line-height: 1.57;
   color: #ffffff;
 }
 
-.nav-menu a:hover {
-  color: #FF00BA;
-}
+.nav-menu a:hover { color: #FF00BA; }
 
-/* ================= MAIL CALL ================= */
-.contact-wrap {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 50px;
-}
-
-.contact-pills {
-  position: fixed;
-  bottom: 40px;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 5px;
-}
-
-.pill {
-  background: #FF00BA;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 9px 5px;
-}
-
-.pill span {
-  color: black;
-  font-size: 18px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-family: 'Roboto Flex', sans-serif;
-  font-weight: 900;
-}
+.section:last-of-type .inner { padding-top: 0px; }
+.section:first-of-type .inner { padding-bottom: 0; }
 
 /* ================= HERO ================= */
 .hero-inner {
-  grid-column: 2 / 4;
+  grid-column: 2 / 3;
   align-self: start;
-  margin-top: 0;
-  padding: 0;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 0px;
+  grid-template-columns: 50px 100px 200px 100px;
   align-items: start;
+  gap: 20px;
+  padding: 0 50px 0 50px;
 }
 
 .left-words {
@@ -178,7 +125,7 @@ body {
   font-size: 5pt;
   letter-spacing: 2px;
   height: 100%;
-  padding-top: 190px;
+  padding-top: 100px;
   padding-bottom: 35px;
   box-sizing: border-box;
 }
@@ -189,12 +136,92 @@ body {
   line-height: 0.75;
 }
 
-/* ================= I-PUNKT ================= */
-.i-wrap {
+
+
+/* ================= HERO TOGGLE ================= */
+.hero-toggle {
   position: relative;
-  display: inline-block;
-  cursor: none;
+  align-self: start;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
 }
+
+.hero-toggle input { display: none; }
+
+.hero-toggle label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: #FF00BA;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.hero-toggle .link-content {
+  display: none;
+  position: relative;
+  margin-top: 38px;
+  margin-left: 150px;
+  color: #FF00BA;
+  font-size: 15pt;
+  text-transform: uppercase;
+  line-height: 1.5;
+  width: 110px;
+  word-break: break-word;
+}
+
+.hero-toggle input:checked + label + .link-content { display: block; }
+
+/* ================= PINKES TOGGLE ================= */
+.link-item {
+  position: relative;
+  grid-column: 2 / 4;
+  color: #FF00BA;
+  font-family: sans-serif;
+}
+
+.link-item input { display: none; }
+
+.link-item label {
+  cursor: pointer;
+  font-size: 75px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FF00BA !important;
+  text-align: right;
+  display: block;
+  float: right;
+}
+
+.link-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: -60px;
+  white-space: nowrap;
+  flex-direction: column;
+  gap: 6px;
+  color: #FF00BA !important;
+  text-transform: uppercase;
+}
+
+.link-item input:checked + label + .link-content { display: flex; }
+
+.link-content a {
+  color: #FF00BA !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1.0px;
+}
+
+.link-content a:hover { color: #FF00BA !important; }
+
+/* ================= I-PUNKT ================= */
+.i-wrap { position: relative; display: inline-block; cursor: none; }
 
 .i-punkt {
   position: absolute;
@@ -221,19 +248,60 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.i-wrap.active .i-dot {
-  opacity: 1;
+.i-wrap.active .i-dot { opacity: 1; }
+
+/* ================= PILLS ================= */
+.contact-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 50px;
 }
 
-/* LINIE */
+.contact-pills {
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  z-index: 300;
+}
+
+.pill {
+  background: #FF00BA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 4px 4px;
+  outline: none;
+  text-decoration: none;
+}
+
+.pill span {
+  color: black;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 900;
+}
+
+/* ================= LINIE ================= */
 .linie-wrapper {
   position: relative;
-  margin-top: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .linie-wrapper .inner div {
   position: relative;
-  top: 50px;
+  top: 20px;
+  bottom: 20px;
 }
 
 .linie-wrapper::before {
@@ -241,9 +309,8 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 3px;
-  top: 0;
-  bottom: 0;
+  width: 2px;
+  height: 150px;
   background: white;
 }
 
@@ -251,7 +318,7 @@ body {
 .gallery .inner {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  padding: 40px 300px;
+  padding: 150px 300px;
 }
 
 .card {
@@ -262,9 +329,7 @@ body {
   transition: outline 0.4s ease;
 }
 
-.card:hover {
-  outline: 2px solid transparent;
-}
+.card:hover { outline: 2px solid transparent; }
 
 .card img {
   width: 100%;
@@ -284,76 +349,49 @@ body {
   transition: 0.4s;
 }
 
-.card:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.03);
-}
-
-.card:hover .overlay {
-  background: rgba(0,0,0,0);
-}
+.card:hover img { filter: grayscale(0%); transform: scale(1.03); }
+.card:hover .overlay { background: rgba(0,0,0,0); }
 
 /* ================= ACCORDION ================= */
-.focus-wrap {
-  padding: 0 300px 40px 300px;
-}
+.focus-wrap { padding: 0 300px 40px 300px; }
 
-.service-item {
-  border-bottom: 1px solid white;
-}
+.service-item { border-bottom: 1px solid white; }
 
-.accordion-toggle {
-  display: none;
-}
+.accordion-toggle { display: none; }
 
 .accordion-label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  padding: 30px 0;
+  padding: 10px 0;
   cursor: pointer;
 }
 
-.accordion-label::after {
-  content: "+";
-  font-weight: 600;
-  font-size: 22px;
-}
-
-.accordion-toggle:checked + .accordion-label::after {
-  content: "−";
-  font-weight: 600;
-  font-size: 22px;
-}
+.accordion-label::after { content: "+"; font-weight: 600; font-size: 22px; }
+.accordion-toggle:checked + .accordion-label::after { content: "−"; font-weight: 600; font-size: 22px; }
 
 .service-content {
   max-height: 0;
   overflow: hidden;
-  padding-left: 100px;
+  padding-left: 150px;
+  padding-bottom: 10px;
   transition: max-height 0.4s ease;
 }
 
-.accordion-toggle:checked + .accordion-label + .service-content {
-  max-height: 800px;
-}
-
 .service-content p {
-  margin: 8px 0;
-  font-size: 12px;
-  letter-spacing: 1px;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
 }
+  
+.accordion-toggle:checked + .accordion-label + .service-content { max-height: 800px; }
 
-.service-content p:hover {
-  color: #FF00BA;
-}
+.service-content h2 { margin: 0; font-size: 15px; letter-spacing: 1px; line-height: 1.7; }
+.service-content p:hover { color: #FF00BA; }
 
-::selection {
-  background: transparent;
-  color: #FF00BA;
-}
+::selection { background: transparent; color: #FF00BA; }
 
 /* ================= STORY ================= */
 .story-grid {
@@ -362,17 +400,9 @@ body {
   padding: 40px 40px 40px 150px;
 }
 
-.number-wrapper {
-  position: relative;
-  display: inline-block;
-}
+.number-wrapper { position: relative; display: inline-block; }
 
-.number-wrapper img {
-  display: block;
-  width: auto;
-  height: 50px;
-  object-fit: contain;
-}
+.number-wrapper img { display: block; width: auto; height: 50px; object-fit: contain; }
 
 .number-wrapper::before {
   content: "";
@@ -387,217 +417,309 @@ body {
   transition: transform 0.3s ease;
 }
 
-.number-wrapper:hover::before {
-  transform: translate(-50%, -50%) scaleX(1);
-}
+.number-wrapper:hover::before { transform: translate(-50%, -50%) scaleX(1); }
 
-/* LINIE in Spalte 2–3 */
-.story-line {
-  grid-column: 2 / 4;
-  width: 120px;
-  height: 2px;
-  background: #ffffff;
-}
-
-/* TEXT ebenfalls in Spalte 2–3 */
 .entry-text {
-  grid-column: 2 / 3;
   text-align: left;
-  line-height: 1.7;
-  font-size: 13px;
+  line-height: 1.5;
+  font-size: 15px;
   font-weight: 300;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   margin-top: 10px;
 }
 
-.entry-text strong {
-  font-weight: 700;
-}
+.entry-text strong { font-weight: 700; }
 
-/* Koordinaten */
 .coords {
-  writing-mode: vertical-lr;
+  writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-size: 10px;
-  letter-spacing: 0px;
   line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #fffcfe;
 }
 
-/* VIERECK */
-.link-item {
-  position: relative;
-  grid-column: 2 / 4;
-  color: #FF00BA;
-  font-family: sans-serif;
-}
-
-/* Checkbox verstecken */
-.link-item input {
-  display: none;
-}
-
-/* ■ Label */
-.link-item label {
-  cursor: pointer;
-  font-size: 100px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #FF00BA;
-  text-align: left;
-}
-
-/* LINKS versteckt */
-.link-content {
-  display: none;
-  margin-top: 10px;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* LINKS sichtbar wenn aktiv */
-.link-item input:checked + label + .link-content {
+/* ================= IMPRESSUM ================= */
+.impressum-box {
   display: flex;
-}
-
-/* LINKS styling */
-.link-content a {
-  color: white;
-  text-decoration: none;
-  font-size: 13px;
-  opacity: 0.7;
-}
-
-.link-content a:hover {
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin-left: 40px;
+  border: 2px solid #FF00BA;
   color: #FF00BA;
-  opacity: 1;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* Hashtags */
-.text-block {
-  padding: 0 350px 0 300px;
-  font-family: 'Temeraire';
-  font-size: 70px;
-  line-height: 1.5;
+.contact {
+  padding-left: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 2;
 }
 
+.impressum-box:hover { background-color: #FF00BA; color: white; }
+
+
+/* =================================================
+   MOBILE — max-width: 768px
+   ================================================= */
 @media (max-width: 768px) {
-  .text-block {
-    padding: 0 30px;
-    font-size: 40px;
-    line-height: 1.5;
-  }
-}
 
+  /* ── HEADER: 1:1 Desktop, nur kompakter ── */
+  .section:first-of-type {
+    position: relative;
+  }
+
+  .section:first-of-type .inner {
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    padding: 40px;
+    display: grid;
+  }
+
+  /* ── ALLE .inner: gleicher Rand links + rechts ── */
+  .inner {
+    padding: 50px 50px;
+  }
+
+  /* ── HERO ── */
+  .hero-inner {
+    grid-column: 2 / 3;
+  }
+
+  .hero-grid {
+    grid-template-columns:  1fr 2fr 2fr 1fr;
+    gap: 0 10px;
+  }
+
+  .left-words {
+    font-size: 5pt;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    gap: 10px;
+  }
+
+  .main-title {
+    font-size: 170px;
+    line-height: 0.78;
+  }
+
+  .hero-toggle {
+    grid-column: 1 / -1;
+    padding-top: 16px;
+  }
+
+  .hero-toggle .link-content {
+    margin-top: 0;
+    margin-left: 12px;
+    font-size: 10pt;
+    width: auto;
+  }
+
+  /* ── ZWISCHENTITEL direkt über Inhalt ── */
+  .section-label .inner { padding-bottom: 0; }
+
+  /* ── ZWISCHENTITEL (DESIGN / FOCUS / STORY / HALLO) ──
+     bleiben im normalen Grid, kein extra Abstand */
+  .section .inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── GALLERY: 2-spaltig, größerer Gap ── */
+  .gallery .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px 40px;
+  }
+
+  /* ── ACCORDION ── */
+  .focus-wrap {
+    padding: 0 40px 20px 40px;
+  }
+
+  .service-content {
+    padding-left: 0;
+  }
+
+  /* ── TEXT-BLOCK ── */
+  .hey-text {
+    font-size: 8vw !important;
+    line-height: 1.3 !important;
+    padding: 30px 40px !important;
+  }
+
+  /* ── VIERECK / LINKS ── */
+  .link-item {
+    grid-column: unset;
+  }
+
+  .link-item label {
+    font-size: 20px;
+  }
+
+  .link-content {
+    left: 0;
+    white-space: normal;
+    top: 20px;
+  }
+
+  /* ── STORY: 2 Spalten nebeneinander ── */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 40px;
+    gap: 0 24px;
+  }
+
+  /* leere Randspalten (1 + 4) weg */
+  .story-grid > div:first-child,
+  .story-grid > div:last-child {
+    display: none;
+  }
+
+  .entry-text { font-size: 12px; }
+  .number-wrapper img { height: 30px; }
+
+  /* ── ZITAT kleiner ── */
+  .hey-text > div[style] {
+    font-size: 23px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* ── HASHTAGS kleiner ── */
+  .hashtag-block {
+    font-size: 9vw !important;
+    padding: 0 40px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* ── KONTAKT ── */
+  .impressum-box { margin-left: 0; }
+  .contact { padding-left: 0; font-size: 14px; }
+
+  /* ── PILLS größer ── */
+  .contact-pills { bottom: 15px; }
+  .pill { padding: 14px 8px; }
+  .pill span { font-size: 18px; letter-spacing: 3px; }
+
+}
 </style>
 </head>
 
-<body>
 
 <!-- HEADER -->
-<div class="section">
+<div class="section" style="position: relative;">
   <div class="inner">
-
     <div class="logo">
-      <a href="index.html">
-        <img src="../05_txt-grafik/des_sign.png">
-      </a>
+      <a href="index.html"><img src="../05_txt-grafik/des_sign.png"></a>
     </div>
-
     <div></div>
     <div></div>
-
-    <!-- Burger -->
     <div class="burger" id="burger" onclick="toggleMenu()">
       <span></span>
       <span></span>
     </div>
-
-    <!-- MENÜ -->
     <div class="nav-menu" id="navMenu">
-      <a href="#">DESIGN</a>
-      <a href="#">FOCUS</a>
-      <a href="#">STORY</a>
-      <a href="#">HALLO</a>
+      <a href="#design">DESIGN</a>
+      <a href="#focus">FOCUS</a>
+      <a href="#story">STORY</a>
+      <a href="#hallo">HALLO</a>
     </div>
-
   </div>
 </div>
 
-<!-- MAIL CALL -->
 <div class="contact-wrap">
   <div class="contact-pills">
-    <div class="pill"><span>MAIL</span></div>
-    <div class="pill"><span>CALL</span></div>
+    <a href="mailto:DES_SIGN@WEB.DE" class="pill"><span>MAIL</span></a>
+    <a href="tel:01731853811" class="pill"><span>CALL</span></a>
   </div>
 </div>
 
 <!-- HERO -->
-<div class="section">
-  <div class="inner">
-
+<div class="section" style="position: relative;">
+  <div class="inner" style="padding: 10px;">
     <div></div>
-
     <div class="hero-inner">
       <div class="hero-grid">
-
         <div class="left-words">
           <div>KOM</div>
           <div>MUNI</div>
           <div>KAT</div>
           <div>ION</div>
         </div>
-
         <div class="main-title">
           De<br>
           s<span class="i-wrap" id="iWrap">i<span class="i-punkt" id="iPunkt"><span class="i-dot" id="iDot"></span></span></span><br>
           gn
+        </div><br><br><br><br>
+
+     
+  
+    
+        <div class="hero-toggle">
+          <input type="checkbox" id="toggle">
+          <label for="toggle" title="klick mich!"></label>
+          <div class="link-content">
+            MIT EMPATHIE<br>
+            DETAILLIEBE<br>
+            INDIVIDUELLE<br>
+            KOMMUNIKAT-<br>
+            IONSPROJEKTE<br>
+            ENTWICKELN.
+          </div>
         </div>
+     </div>
 
-      </div>
-    </div>
+ </div>
 
+        
     <div></div>
-
   </div>
 </div>
 
-<!-- LINIE + ZWISCHENZEILE + DESIGN -->
+<!-- LINIE + DESIGN -->
 <div class="linie-wrapper">
-
-  <!-- ZWISCHENZEILE DESIGN -->
-  <div class="section">
+  <div class="section section-label" id="design">
     <div class="inner">
-      <div style="font-size: 10px; letter-spacing: 0px; line-height: 1.5;">
+      <div style="font-size: 9px; letter-spacing: 0px; line-height: 1.5;">
         <div>DESIGN</div>
         <div>Portfolio</div>
       </div>
     </div>
   </div>
-
 </div>
 
+  
 <!-- GALLERY -->
 <div class="section gallery">
   <div class="inner">
-    <a href="#" class="card"><img src="../04_portfolio/c_christian_mockup.jpg"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/typo_design_plakat.jpg"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/kurzundknackig_logo.jpg"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/Logo_AK_Mockup.jpg"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/arabisches logo_petrol.jpg"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/feng shui.png"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/Cover-Entwürfe_Mein Fischer.jpg"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/takeashot_cover_1.jpg"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/philia.jpg"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/scdhfk_plakat.jpg"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/Otto Lilienthal.jpg"><div class="overlay"></div></a>
-    <a href="#" class="card"><img src="../04_portfolio/Theater_Flyer.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/c_b_typo.html" class="card"><img src="../04_portfolio/c_christian_mockup.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/typo_design.html" class="card"><img src="../04_portfolio/typo_design_plakat.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/k_k.html" class="card"><img src="../04_portfolio/kurzundknackig_logo.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/aak.html" class="card"><img src="../04_portfolio/Logo_AK_Mockup.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/arab_logo.html" class="card"><img src="../04_portfolio/arabisch_logo_petrol.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/fengshui.html" class="card"><img src="../04_portfolio/fengshui.png"><div class="overlay"></div></a>
+    <a href="01_seite/fischer.html" class="card"><img src="../04_portfolio/Cover-Entwuerfe_Mein_Fischer.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/takeashot.html" class="card"><img src="../04_portfolio/takeashot_cover_1.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/philia.html" class="card"><img src="../04_portfolio/philia.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/scdhfk.html" class="card"><img src="../04_portfolio/scdhfk_plakat.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/otto.html" class="card"><img src="../04_portfolio/Otto Lilienthal.jpg"><div class="overlay"></div></a>
+    <a href="01_seite/theater.html" class="card"><img src="../04_portfolio/Theater_Flyer.jpg"><div class="overlay"></div></a>
   </div>
 </div>
 
-<!-- ZWISCHENZEILE FOCUS -->
-<div class="section">
+
+<!-- FOCUS -->
+<div class="section section-label" id="focus">
   <div class="inner">
-    <div style="font-size: 10px; letter-spacing: 0px; line-height: 1.5;">
+    <div style="font-size: 9px; letter-spacing: 0px; line-height: 1.5;">
       <div>Focus</div>
       <div>Leistung</div>
     </div>
@@ -606,271 +728,153 @@ body {
 
 <!-- ACCORDION -->
 <div class="focus-wrap">
-
   <div class="service-item">
     <input type="checkbox" id="brand" class="accordion-toggle">
-    <label for="brand" class="accordion-label"><h3>BRAND</h3></label>
+    <label for="brand" class="accordion-label"><h2 style="font-weight:600;">BRAND</h2></label>
     <div class="service-content">
-      <p>‣&nbsp;&nbsp;&nbsp; Corporate Design</p>
-      <p>‣&nbsp;&nbsp;&nbsp; Logo / Signet</p>
-      <p>‣&nbsp;&nbsp;&nbsp; Typografie</p>
-      <p>‣&nbsp;&nbsp;&nbsp; Farbgestaltung</p><br>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Entwicklung von Corporate Design als strategische Markenbasis</p>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Gestaltung von Logo / Signet als prägnantes Wiedererkennungsmerkmal</p>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Definition einer konsistenten Typografie zur visuellen Einheit</p>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Aufbau einer klaren Farbgestaltung zur Markenführung und Differenzierung</p><br>
     </div>
   </div>
-
   <div class="service-item">
     <input type="checkbox" id="grafik" class="accordion-toggle">
-    <label for="grafik" class="accordion-label"><h3>GRAFIK</h3></label>
+    <label for="grafik" class="accordion-label"><h2 style="font-weight:600;">GRAFIK</h2></label>
     <div class="service-content">
-      <p>‣&nbsp;&nbsp;&nbsp; Visitenkarten</p>
-      <p>‣&nbsp;&nbsp;&nbsp; Plakate</p>
-      <p>‣&nbsp;&nbsp;&nbsp; Editorial</p><br>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Gestaltung von Visitenkarten als kompaktes Markenformat</p>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Entwicklung von Plakaten mit klarer visueller Hierarchie und Wirkung</p>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Editorial Design für konzeptionelle, medienübergreifende Layoutsysteme</p><br>
     </div>
   </div>
-
   <div class="service-item">
-    <input type="checkbox" id="design" class="accordion-toggle">
-    <label for="design" class="accordion-label"><h3>DESIGN</h3></label>
+    <input type="checkbox" id="design-acc" class="accordion-toggle">
+    <label for="design-acc" class="accordion-label"><h2 style="font-weight:600;">DESIGN</h2></label>
     <div class="service-content">
-      <p>‣&nbsp;&nbsp;&nbsp; UI/UX</p>
-      <p>‣&nbsp;&nbsp;&nbsp; Wireframes</p>
-      <p>‣&nbsp;&nbsp;&nbsp; Prototyping</p>
-      <p>‣&nbsp;&nbsp;&nbsp; Informationsarchitektur</p><br>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; UI/UX Design für digitale Produkte, Websites und Anwendungen</p>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Entwicklung von Wireframes als strukturelle Grundlage</p>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Prototyping zur funktionalen und visuellen Validierung</p>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Aufbau einer Informationsarchitektur für intuitive Nutzerführung</p><br>
     </div>
   </div>
-
   <div class="service-item">
     <input type="checkbox" id="guide" class="accordion-toggle">
-    <label for="guide" class="accordion-label"><h3>GUIDE</h3></label>
+    <label for="guide" class="accordion-label"><h2 style="font-weight:600;">GUIDE</h2></label>
     <div class="service-content">
-      <p>‣&nbsp;&nbsp;&nbsp; Design Guidelines</p>
-      <p>‣&nbsp;&nbsp;&nbsp; Styleguide</p>
-      <p>‣&nbsp;&nbsp;&nbsp; Brand System</p><br>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Design Guidelines zur Sicherung <br> visueller Konsistenz</p>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Entwicklung eines Styleguides als <br> verbindliches Gestaltungssystem</p>
+      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Aufbau eines Brand Systems als <br> langfristige gestalterische Grundlage</p><br>
     </div>
   </div>
-
 </div>
 
-<!-- TEXT -->
-<div style="padding: 0 300px 40px 300px; font-family: 'Temeraire'; font-size: 70px; line-height: 1.5;">
-  <br>
-  <br>
-  Hey, ich bin Designerin<br>
-  mit Schwerpunkt auf<br>
-  Konzeption &amp; Umsetzung<br>
-  von Kommunikation.
+<!-- TEXT + VIERECK -->
+<div class="hey-text" style="display: flex; flex-direction: column; align-items: flex-start; padding: 100px 10px 100px 10px; cursor: pointer;" title="klick mich!">
+  <div class="link-item" style="margin-left: 100px; text-align: right; width: 200px;">
+    <input type="checkbox" id="links-toggle">
+    <label for="links-toggle" class="link-label">■</label>
+    <div class="link-content" style="text-align: right;">
+      <strong style="color: #FF00BA !important; font-size: 12pt;">Online-Projekte</strong>
+      <a href="https://www.atg-klettern.de" target="_blank">ATG-Klettern.de</a>
+      <a href="https://www.hauptstadtcoach.de" target="_blank">Hauptstadtcoach.de</a>
+      <a href="https://westgarten-leipzig.de" target="_blank">Westgarten-Leipzig.de</a>
+      <a href="https://parkschlossleipzig.de" target="_blank">ParkschlossLeipzig.de</a>
+    </div>
+  </div><br>
+  <div style="font-family: 'Temeraire'; font-size: 70px; line-height: 1.5;">
+    Hey, ich bin Designerin<br>
+    mit Schwerpunkt auf<br>
+    Konzeption &amp; Umsetzung<br>
+    von Kommunikation.
+  </div>
 </div>
 
-<!-- ZWISCHENZEILE STORY -->
-<div class="section">
+<!-- STORY -->
+<div class="section section-label" id="story">
   <div class="inner">
-    <div style="font-size: 10px; letter-spacing: 0px; line-height: 1.5;">
+    <div style="font-size: 9px; letter-spacing: 0px; line-height: 1.5;">
       <div>STORY</div>
       <div>Werdegang</div>
     </div>
   </div>
 </div>
 
-<!-- STORY -->
 <div class="story-grid">
-
   <div></div>
-
   <div>
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/11-1.png">
-    </div>
-    <div class="entry-text">
-      seit 2021<br>
-      <strong>Selbstständige Designerin</strong><br>
-      Energiesektor, Eis-Manufaktur<br>
-      Veranstaltungsbranche, Sport-<br>&amp; Eventprojekte, Agenturen etc.<br><br><br><br>
-    </div>
-
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/09-1.png">
-    </div>
-    <div class="entry-text">
-      2015 — 2018<br>
-      <strong>Bachelor of Arts in<br>Kommunikationsdesign</strong><br>
-      Designhochschule<br>Vitruvius Hochschule Leipzig<br><br><br><br>
-    </div>
-
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/07.png">
-    </div>
-    <div class="entry-text">
-      2014 — 2015<br>
-      <strong>Mediendesign</strong><br>
-      Corporate Design &amp; Identity<br><br><br><br><br><br>
-    </div>
-
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/05.png">
-    </div>
-    <div class="entry-text">
-      2008 — 2012<br>
-      <strong>Außenwerbung &amp; Promotion</strong><br>
-      Veranstaltungen in Mittelthüringen<br><br><br><br>
-    </div>
-
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/03.png">
-    </div>
-    <div class="entry-text">
-      2008 — 2009<br>
-      <strong>Gestaltungstechnische Assistentin</strong><br>
-      Walter‑Gropius‑Schule Erfurt<br><br><br><br><br><br>
-    </div>
-
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/01.png">
-    </div>
-    <div class="entry-text">
-      2003 — 2004<br>
-      <strong>Orientierungsjahr</strong><br>
-      Informationstechnik<br>
-      Andreas‑Gordon‑Schule Erfurt<br><br><br><br>
-    </div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/11-1.png"></div><br><br>
+    <div class="entry-text">seit 2021<br><strong>Selbstständige Designerin</strong><br>Energiesektor, <br>Eis-Manufaktur, Veranstaltungsbranche, Sport- &amp; Eventprojekte, Agenturen etc.<br><br><br><br></div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/09-1.png"></div><br><br>
+    <div class="entry-text">2015 — 2018<br><strong>Bachelor of Arts in<br>Kommunikationsdesign</strong><br>Designhochschule<br>Vitruvius Hochschule Leipzig<br><br><br><br></div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/07.png"></div><br><br>
+    <div class="entry-text">2014 — 2015<br><strong>Mediendesign</strong><br>Corporate Design &amp; Identity<br><br><br><br><br><br></div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/05.png"></div><br><br>
+    <div class="entry-text">2008 — 2012<br><strong>Außenwerbung &amp; Promotion</strong><br>Veranstaltungen in Mittelthüringen<br><br><br><br></div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/03.png"></div><br><br>
+    <div class="entry-text">2008 — 2009<br><strong>Gestaltungstechnische Assistentin</strong><br>Walter‑Gropius‑Schule Erfurt<br><br><br><br><br><br></div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/01.png"></div><br><br>
+    <div class="entry-text">2003 — 2004<br><strong>Orientierungsjahr</strong><br>Informationstechnik<br>Andreas‑Gordon‑Schule Erfurt<br><br><br><br></div>
   </div>
-
   <div>
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/10.png">
-    </div>
-    <div class="entry-text">
-      2019 — 2020<br>
-      <strong>Kommunikationsdesign</strong><br>
-      Web- &amp; Grafik-Design,<br>
-      Innenarchitektur, Leitsystem,<br>
-      Raum-Design<br><br><br><br>
-    </div>
-
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/08.png">
-    </div>
-    <div class="entry-text">
-      2015 — 2016<br>
-      <strong>Retail</strong><br>
-      Marketing &amp; Verkauf<br><br><br><br><br><br>
-    </div>
-
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/06.png">
-    </div>
-    <div class="entry-text">
-      2010 — 2013<br>
-      <strong>Mediengestalterin</strong><br>
-      Digital - Print<br>
-      Walter‑Gropius‑Schule Erfurt<br>
-      Druckerei Aschersleben<br><br><br><br>
-    </div>
-
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/04.png">
-    </div>
-    <div class="entry-text">
-      2009 — 2010<br>
-      <strong>Gestaltungs- &amp; Medientechnik</strong><br>
-      Drogen- und Suchtprävention<br><br><br><br>
-    </div>
-
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/02.png">
-    </div>
-    <div class="entry-text">
-      2004 — 2008<br>
-      <strong>Berufliches Gymnasium</strong><br>
-      Gestaltungs- &amp; Medientechnik<br>
-      Walter‑Gropius‑Schule Erfurt<br><br><br><br><br>
-    </div>
-
-    <div class="number-wrapper">
-      <img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/12.png">
-    </div>
-    <div class="entry-text">
-      Geboren in<br>
-      <strong>Erfurt</strong>
-    </div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/10.png"></div><br><br>
+    <div class="entry-text">2019 — 2020<br><strong>Kommunikationsdesign</strong><br>Web- &amp; Grafik-Design,<br>Innenarchitektur, Leitsystem,<br>Raum-Design<br><br><br><br><br><br></div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/08.png"></div><br><br>
+    <div class="entry-text">2015 — 2016<br><strong>Retail</strong><br>Marketing &amp; Verkauf<br><br><br><br><br><br><br></div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/06.png"></div><br><br>
+    <div class="entry-text">2010 — 2013<br><strong>Mediengestalterin</strong><br>Digital - Print<br>Walter‑Gropius‑Schule Erfurt<br>Druckerei Aschersleben<br><br><br><br></div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/04.png"></div><br><br>
+    <div class="entry-text">2009 — 2010<br><strong>Gestaltungs- &amp; Medientechnik</strong><br>Drogen- und Suchtprävention<br><br><br><br></div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/02.png"></div><br><br>
+    <div class="entry-text">2004 — 2008<br><strong>Berufliches Gymnasium</strong><br>Gestaltungs- &amp; Medientechnik<br>Walter‑Gropius‑Schule Erfurt<br><br><br><br><br></div>
+    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/12.png"></div><br><br>
+    <div class="entry-text">Geboren in<br><strong>Erfurt</strong></div>
   </div>
-
   <div></div>
-
 </div>
 
-<!-- ZWISCHENZEILE HALLO -->
-<div class="section">
+<!-- HALLO -->
+<div class="section section-label" id="hallo">
   <div class="inner">
-    <div style="font-size: 10px; letter-spacing: 0px; line-height: 1.5;">
+    <div style="font-size: 9px; letter-spacing: 0px; line-height: 1.5;">
       <div>HALLO!</div>
-      <div>Schreib mir</div>
+      <div>Schreib mir</div><br><br>
     </div>
   </div>
 </div>
 
-<!-- HASHTAG TEXT -->
-<div style="padding: 0 350px 0 300px; font-family: 'Temeraire'; font-size: 90px; line-height: 1.5;">
+<!-- HASHTAGS -->
+<div class="hashtag-block" style="padding: 0 350px 0 300px; font-family: 'Temeraire'; font-size: 90px; line-height: 1.5;">
   #Brand  #Grafik  <br>
   #Digital #Print
 </div>
 
+<br><br><br><br>
+
+
+  
 <!-- KONTAKT -->
-<div class="story-grid">
-
-  <div></div>
-
-  <div>
-    <div class="story-line"></div>
+<div style="padding: 40px 40px 80px 40px;">
+    <a href="impressum.html" class="impressum-box" title="Impressum">i</a>
     <br>
-    <p class="entry-text">
+    <p class="contact">
       KOMMUNIKATIONSDESIGN<br><br>
       DES_SIGN@WEB.DE<br>
       04177 LEIPZIG
     </p>
   </div>
 
-  <!-- VIERECK / LINKS -->
-  <div class="link-item">
-    <input type="checkbox" id="links-toggle">
-    <label for="links-toggle" class="link-label">■</label>
-    <div class="link-content">
-      <strong>Weitere Referenzen</strong>
-      <a href="https://www.atg-klettern.de" target="_blank">ATG Klettern</a>
-      <a href="https://www.hauptstadtcoach.de" target="_blank">Hauptstadtcoach</a>
-      <a href="https://westgarten-leipzig.de" target="_blank">Westgarten Leipzig</a>
-      <a href="https://parkschlossleipzig.de" target="_blank">Parkschloss Leipzig</a>
-    </div>
-  </div>
-
-  <div></div>
-
-</div>
-
-<!-- RECHTE -->
-<div class="story-grid">
-  <div></div>
-  <div style="grid-column: 2 / 4;">
-    <div class="story-line"></div>
-    <br><br>
-    <div style="font-size: 10px; line-height: 1.5;">
-      <strong>Alle Rechte vorbehalten.</strong><br>
-      <span class="small">Die auf dieser Website verwendeten Bilder, Grafiken, Beiträge und Designarbeiten sind urheberrechtlich geschützt.<br>
-      Eine Vervielfältigung oder Nutzung bedarf der vorherigen schriftlichen Genehmigung.<br>
-      Kundenprojekte, Logos und Auftragsarbeiten dürfen aus Vertraulichkeitsgründen nicht öffentlich gezeigt werden.<br>
-      Trotz sorgfältiger Prüfung übernehmen wir keine Haftung für die Inhalte dieser Website sowie verlinkter externer Seiten.</span>
-    </div>
-  </div>
-</div>
+<br><br><br><br>
 
 <!-- KOORDINATEN -->
-<div class="coords">
+<div class="section">
   <div class="inner">
-    <div style="font-size: 10px; letter-spacing: 0px; line-height: 1.5;">
+    <div class="coords">
       <div>51° 20′ N</div>
       <div>12° 22′ O</div>
     </div>
   </div>
 </div>
+
 
 <script>
 function toggleMenu() {
@@ -882,23 +886,13 @@ const iWrap = document.getElementById('iWrap');
 const iPunkt = document.getElementById('iPunkt');
 const iDot = document.getElementById('iDot');
 
-iWrap.addEventListener('click', () => {
-  iWrap.classList.toggle('active');
-});
-
-iWrap.addEventListener('mouseleave', () => {
-  iWrap.classList.remove('active');
-});
-
+iWrap.addEventListener('click', () => { iWrap.classList.toggle('active'); });
+iWrap.addEventListener('mouseleave', () => { iWrap.classList.remove('active'); });
 iWrap.addEventListener('mousemove', (e) => {
   if (!iWrap.classList.contains('active')) return;
   const rect = iPunkt.getBoundingClientRect();
-  let x = e.clientX - rect.left;
-  let y = e.clientY - rect.top;
-
-  x = Math.max(0, Math.min(rect.width, x));
-  y = Math.max(0, Math.min(rect.height, y));
-
+  let x = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
+  let y = Math.max(0, Math.min(rect.height, e.clientY - rect.top));
   iDot.style.left = x + 'px';
   iDot.style.top = y + 'px';
 });
