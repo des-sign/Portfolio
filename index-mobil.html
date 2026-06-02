@@ -603,21 +603,27 @@ body {
 
  /* ── VIERECK / LINKS ── */
   .link-item {
-    grid-column: 1;
-     align-items: flex-start;
-    gap: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 40px;
     
   }
 
   .link-item label {
-    font-size: 25px;
-    line-height: 3.0
+  display: block;
+  cursor: pointer;
+  font-size: 25px;
+  color: #FF00BA !important;
+  line-height: 1;
+  flex-shrink: 0;
   }
 
   .link-content {
-    left: 0;
-    white-space: normal;
-    top: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
   }
   
 .link-label {
@@ -823,18 +829,16 @@ body {
      Kommunikation. <br>
   </div>
   
-  <div class="link-item" style="margin-left: 10px; text-align: left; width: 200px; padding: 20px 50px;">
-    <input type="checkbox" id="links-toggle">
-    <label for="links-toggle" class="link-label">■</label>
-    <div class="link-content" style="text-align: left;">
-      <strong style="color: #FF00BA !important; font-size: 12pt;">Online-Projekte</strong>
-      <a href="https://www.atg-klettern.de" target="_blank">ATG-Klettern.de</a>
-      <a href="https://www.hauptstadtcoach.de" target="_blank">Hauptstadtcoach.de</a>
-      <a href="https://westgarten-leipzig.de" target="_blank">Westgarten-Leipzig.de</a>
-      <a href="https://parkschlossleipzig.de" target="_blank">ParkschlossLeipzig.de</a>
-    </div>
+<div class="link-item">
+  <input type="checkbox" id="links-toggle">
+  <label for="links-toggle" class="link-label">■</label>
+  <div class="link-content" style="text-align: left;">
+    <strong style="color: #FF00BA !important; font-size: 12pt;">Online-Projekte</strong>
+    <a href="https://www.atg-klettern.de" target="_blank">ATG-Klettern.de</a>
+    <a href="https://www.hauptstadtcoach.de" target="_blank">Hauptstadtcoach.de</a>
+    <a href="https://westgarten-leipzig.de" target="_blank">Westgarten-Leipzig.de</a>
+    <a href="https://parkschlossleipzig.de" target="_blank">ParkschlossLeipzig.de</a>
   </div>
-  <br><br>
 </div>
 
 <!-- STORY -->
