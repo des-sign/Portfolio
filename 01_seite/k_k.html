@@ -149,16 +149,14 @@ body {
 }
   
 
-
-  
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
 
   body {
     height: auto;
     overflow-x: hidden;
   }
 
-  /* ================= HEADER (bleibt stabil) ================= */
+  /* ================= HEADER ================= */
   .section:first-of-type .inner {
     display: flex;
     justify-content: space-between;
@@ -174,46 +172,42 @@ body {
     gap: 20px;
   }
 
-  /* WICHTIG: NUR Content-Sektion beeinflussen */
+  /* alles stabilisieren */
   .section:not(:first-of-type) .inner > div {
     width: 100%;
+    box-sizing: border-box;
   }
 
-  /* ================= REIHENFOLGE ================= */
+  /* ================= REIHENFOLGE (WICHTIG) ================= */
 
-  /* Tags */
+  /* TAGS */
   .section:not(:first-of-type) .inner > div:nth-child(1) {
     order: 3;
-    padding-left: 20px;
   }
 
-  /* Bild */
+  /* BILD */
   .section:not(:first-of-type) .inner > div:nth-child(2) {
-    display: none;
-  }
-
-  .section:not(:first-of-type) .inner > div:nth-child(2) img {
-  order: 1;
+    order: 1;
     padding: 0 !important;
   }
 
-  /* Text */
+  .section:not(:first-of-type) .inner > div:nth-child(2) img {
+    width: 100% !important;
+    height: auto;
+    display: block;
+  }
+
+  /* TEXT */
   .section:not(:first-of-type) .inner > div:nth-child(3) {
     order: 2;
     font-size: 14px !important;
     line-height: 1.7 !important;
     margin: 0;
-    
-  }
-
-  /* ================= WICHTIG: KEIN GLOBAL BREAK ================= */
-  .inner > div {
-    box-sizing: border-box;
   }
 
   /* ================= UNTERE BILDER ================= */
   body > div:not(.section) img {
-    width: 90%;
+    width: 90% !important;
     max-width: 100%;
     height: auto;
     display: block;
