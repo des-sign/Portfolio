@@ -131,11 +131,13 @@ body {
     overflow-x: hidden;
   }
 
-  /* Header bleibt */
-  .section:first-of-type .inner {
-    grid-template-columns: 1fr 2fr 2fr 1fr;
-    padding: 20px 20px;
-  }
+    
+.section:first-of-type .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
 
   /* Content-Grid einspaltig */
   .section:not(:first-of-type) .inner {
