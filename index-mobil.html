@@ -327,15 +327,20 @@ body {
 }
 
 /* ================= GALLERY ================= */
+  
+.gallery {
+  overflow-x: hidden;
+}
+  
 .gallery .inner {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-
-  padding: 80px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 40px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
+  
 .card {
   position: relative;
   aspect-ratio: 1/1;
