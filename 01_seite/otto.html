@@ -200,6 +200,23 @@ body {
 .tags {
     margin-top: 40px;
   }
+
+
+
+    
+    div:has(> img[src*="Otto Lilienthal Flyer.jpg"]) img,
+  div:has(> img[src*="Otto Lilienthal Magazin.jpg"]) img {
+    width: 100% !important;
+    height: auto;
+  }
+
+  /* Container sauber ausrichten */
+  div:has(> img[src*="Otto Lilienthal Flyer.jpg"]),
+  div:has(> img[src*="Otto Lilienthal Magazin.jpg"]) {
+    margin: 0 0 60px 0 !important;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 </style>
