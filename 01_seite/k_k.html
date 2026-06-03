@@ -162,17 +162,12 @@ body {
 
   /* HEADER */
   .section:first-of-type .inner {
-    display: flex;
-                                                /* HIER */
-    flex-direction: row-reverse;
-    
-    justify-content: space-between;
-    align-items: center;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
     padding: 20px;
   }
 
-  /* ALLGEMEIN GRID → MOBILE 1 SPALTE */
-  .section .inner {
+  /* GRID BLEIBT – nur einspaltig */
+  .section:not(:first-of-type) .inner {
     grid-template-columns: 1fr !important;
   }
 
@@ -180,27 +175,38 @@ body {
     grid-column: auto !important;
   }
 
-  /* TAGS ABSTAND */
-  .tags {
-    margin-top: 40px;
+  /* REIHENFOLGE */
+  .inner > div:nth-child(1) { order: 4; } /* Tags */
+  .inner > div:nth-child(2) { order: 1; } /* Bild */
+  .inner > div:nth-child(3) { order: 2; } /* Text */
+
+  /* BILD OBEN */
+  .section .inner img {
+    width: 100% !important;
+    height: auto;
   }
 
-  /* TEXT GRÖSSE */
-  p {
+  /* UNTERE BILDER (nur diese Section gezielt) */
+  body > div:nth-of-type(3) img {
+    width: 75% !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  body > div:nth-of-type(4) img {
+    width: 60% !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* TEXT */
+  .section .inner p {
     font-size: 13px !important;
     line-height: 1.6 !important;
   }
 
-  /* OBERE SECTION BILD */
-  .section img {
-    width: 100% !important;
-  }
-
-  /* UNTERE BILDER (deine 2 Bilder unten) */
-  body > div img {
-    width: 75% !important;
-    display: block;
-    margin: 0 auto;
+  .tags {
+    margin-top: 40px;
   }
 
 
