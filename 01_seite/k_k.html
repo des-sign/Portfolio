@@ -153,58 +153,54 @@ body {
   
   @media (max-width: 768px) {
 
+@media (max-width: 768px) {
+
   body {
     height: auto;
     overflow-x: hidden;
   }
 
-  /* Header bleibt */
+  /* HEADER */
   .section:first-of-type .inner {
-    grid-template-columns: 1fr 2fr 2fr 1fr;
-    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
   }
 
-    .gallery .inner {
-  display: grid;
-  grid-template-columns: 1fr 0.5fr 1fr;
-  gap: 12px;
-  padding: 20px;
-}
-
-
-
-  /* Reihenfolge: Bild, Vierecke, Text, Tags */
-  .inner > div:nth-child(1) { order: 4; } /* Tags */
-  .inner > div:nth-child(2) { order: 1; } /* Bild */
-  .inner > div:nth-child(3) { order: 2; } /* Vierecke + Text */
-
-  /* Bild volle Breite */
-  .inner > div:nth-child(2) {
-    padding: 0 0 40px 0 !important;
-  }
-
-  .inner > div:nth-child(2) img {
-    width: 100% !important;
-  }
-
-  /* Text größer */
-  .inner > div:nth-child(3) > div:last-child {
-    font-size: 14px !important;
-    line-height: 1.7 !important;
-    padding-top: 40px;
-    bottom: 40px;
-  }
-.tags {
-    margin-top: 40px;
-  }
-
-      .section .inner {
-    grid-template-columns: 1fr;
+  /* ALLGEMEIN GRID → MOBILE 1 SPALTE */
+  .section .inner {
+    grid-template-columns: 1fr !important;
   }
 
   .section .inner > div {
     grid-column: auto !important;
   }
+
+  /* TAGS ABSTAND */
+  .tags {
+    margin-top: 40px;
+  }
+
+  /* TEXT GRÖSSE */
+  p {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* OBERE SECTION BILD */
+  .section img {
+    width: 100% !important;
+  }
+
+  /* UNTERE BILDER (deine 2 Bilder unten) */
+  body > div img {
+    width: 75% !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+
 }
 
   
@@ -249,8 +245,8 @@ body {
   <div class="inner">
 
     <!-- LINKS: Tags -->
-    <div style="display:flex; flex-direction:column; justify-content:flex-end; padding-bottom: 0;">
-      <div style="font-size:8px; line-height:2.0;">
+          <div class="tags">
+  <div style="font-size:8px; line-height:2;">
         <div># LOGO</div>
         <div># CORPORATE</div>
         <div># FOLDER</div>
