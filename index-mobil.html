@@ -350,11 +350,15 @@ body {
   position: relative;
   aspect-ratio: 1/1;
   overflow: hidden;
-  outline: 2px solid white;
+  
+   border: 2px solid white;
+  box-sizing: border-box;
+  
   transition: outline 0.4s ease;
 }
 
-.card:hover { outline: 2px solid transparent; }
+.card:hover { 
+  border-color: transparent; }
 
 .card img {
   width: 100%;
