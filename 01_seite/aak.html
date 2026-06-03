@@ -161,19 +161,26 @@ body {
 
   /* Header bleibt */
   .section:first-of-type .inner {
-    grid-template-columns: 1fr 2fr 2fr 1fr;
-    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
   }
 
   /* Content-Grid einspaltig */
-  .section:not(:first-of-type) .inner {
-    grid-template-columns: 1fr !important;
-    padding: 20px 20px !important;
+    .section:not(:first-of-type) .inner {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
   }
 
+    /* ALLE Spalten außer Header neutralisieren */
   .inner > div {
-    grid-column: 1 !important;
+    width: 100% !important;
   }
+
+  
 
   /* Reihenfolge: Bild, Vierecke, Text, Tags */
   .inner > div:nth-child(1) { order: 4; } /* Tags */
@@ -195,25 +202,16 @@ body {
     height: 25px !important;
   }
 
-  /* Text größer */
-  .inner > div:nth-child(3) > div:last-child {
-    font-size: 14px !important;
-    line-height: 1.7 !important;
-    padding-top: 40px;
-    bottom: 40px;
-  }
-.tags {
-    margin-top: 40px;
+  /* ================= TEXT ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(3) {
+    font-size: 20px;
+    line-height: 1.7;
+    margin: 20px;
   }
 
-    div[style*="justify-content:center"] {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  div[style*="justify-content:center"] img {
-    width: 100% !important;
-    height: auto;
+  /* ================= TAGS ================= */
+  .tags {
+    margin-top: 10px;
   }
 }
   
