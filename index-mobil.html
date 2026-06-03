@@ -425,7 +425,7 @@ body {
 
 .number-wrapper { position: relative; display: inline-block; }
 
-.number-wrapper img { display: block; width: auto; height: 40px; object-fit: contain; }
+.number-wrapper img { display: block; width: auto; height: 30px; object-fit: contain; }
 
 .number-wrapper::before {
   content: "";
@@ -611,40 +611,64 @@ body {
   
  /* ── 2. Viereck:Links ── */
 
+
  /* ── VIERECK / LINKS ── */
-  .link-item {
+.link-item {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 10px;
-  padding-left: 0px;
-    
-  }
+  padding-left: 0;
+}
 
-  .link-item label {
-  display: block;
-  cursor: pointer;
-  font-size: 35px;
-  color: #FF00BA !important;
-  line-height: 1;
-  flex-shrink: 0;
-  }
-
-  .link-content {
-  position: relative;
-  top: 0;
-  left: 0;
-  }
-  
+/* VIERECK bleibt unverändert */
 .link-label {
   display: block;
   cursor: pointer;
   font-size: 80px;
   color: #FF00BA !important;
-  line-height: 1.0;
+  line-height: 1;
   padding: 0;
-  margin: 0px;
+  margin: 0;
 }
+
+/* LINK-CONTAINER (Online Projekte) */
+.link-content {
+  position: relative;
+  top: 0;
+  left: 0;
+
+  font-size: 15px;
+  line-height: 1.2;
+  color: #FF00BA !important;
+
+  text-transform: uppercase;
+}
+
+/* einzelne Links */
+.link-content a {
+  display: block;
+  font-size: 15px;
+  line-height: 1.1;
+  color: #FF00BA !important;
+  text-decoration: none;
+  margin-top: 4px;
+}
+
+/* Hover */
+.link-content a:hover {
+  color: #FF00BA !important;
+}
+
+/* Titel "Online-Projekte" */
+.link-content strong {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+
+  
   
   /* ── HASHTAGS kleiner ── */
   .hashtag-block {
