@@ -219,10 +219,9 @@ body {
   }
 
 
-  img[src*="kurzundknackig_logo_raster"] {
-  display: none !important;
-}
-
+body > div:not(.section):has(img[src*="kurzundknackig_logo_raster"]) {
+  order: 10;
+  }
   
   /* ================= TAGS ================= */
   .tags {
