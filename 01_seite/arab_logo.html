@@ -131,23 +131,38 @@ body {
     overflow-x: hidden;
   }
 
-    
-.section:first-of-type .inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
+ /* Header bleibt */
+   .section:first-of-type .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+   /* NEU: fixiert Logo & Burger */
+  .section:first-of-type .logo {
+    order: 1;
+  }
+
+  .section:first-of-type .burger {
+    order: 2;
+    margin-left: auto;
+  }
 
   /* Content-Grid einspaltig */
-  .section:not(:first-of-type) .inner {
-    grid-template-columns: 1fr !important;
-    padding: 20px 20px !important;
+    .section:not(:first-of-type) .inner {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
   }
 
+    /* ALLE Spalten außer Header neutralisieren */
   .inner > div {
-    grid-column: 1 !important;
+    width: 100% !important;
   }
+
+    
 
   /* Reihenfolge: Bild, Vierecke, Text, Tags */
   .inner > div:nth-child(1) { order: 4; } /* Tags */
