@@ -177,27 +177,26 @@ body {
   }
 
 
-/* kein Menü */
-  .nav-menu {
-    display: none !important;
-  }
-
-  /* kein Burger-Icon mehr */
-  .burger span {
+/* Burger weg */
+  .burger {
     display: none;
   }
 
-  /* neuer Pfeil */
-  .burger::before {
-    content: "›";
-    font-size: 32px;
-    line-height: 1;
+  /* Next Pfeil */
+  .next {
     display: block;
+    text-align: right;
+    font-size: 36px;
+    font-weight: 800;
+    padding: 30px 20px;
+    color: white;
+    text-decoration: none;
   }
 
-  .burger:active::before {
+  .next:active {
     transform: translateX(4px);
   }
+
   
   /* ================= HEADER ================= */
   .section:first-of-type .inner {
@@ -371,7 +370,7 @@ body {
   <img src="../04_portfolio/philia_app.png" style="width:70%; height:auto; display:block;">
 </div>
 
-      <a class="next" href="../index.html">›</a>
+      <a class="next" href="../01.seiten/scdhfk.html">›</a>
 
 <br>
 <br>
