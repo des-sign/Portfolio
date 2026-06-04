@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>des_sign</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
@@ -15,11 +16,13 @@
   src: url("../02_fonts/Temeraire Display Bk.ttf");
 }
 
+
+
 /* BASIC */
 body {
   margin: 0;
   max-width: 1500px;
-  height: 1080px;
+  height: 1080px; 
   background: black;
   color: white;
   font-family: 'Roboto Flex', sans-serif;
@@ -45,12 +48,14 @@ body {
   height: 11px;
 }
 
+/* BURGER */
 .burger {
   grid-column: 4;
   display: flex;
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
+  align-items: flex-start;
   position: relative;
   z-index: 200;
 }
@@ -61,6 +66,7 @@ body {
   background: white;
   transition: all 0.3s ease;
   display: block;
+  transform-origin: center;
 }
 
 .burger.open span:nth-child(1) {
@@ -71,18 +77,23 @@ body {
   transform: translateY(-5px) rotate(-45deg);
 }
 
-/* NAV */
+/* MENÜ */
 .nav-menu {
   grid-column: 4;
   display: none;
   position: absolute;
+  gap: 100px;
   top: 0;
   right: 50px;
   width: 220px;
   height: 100%;
   flex-direction: column;
+  justify-self: start;
+  justify-content: flex-start;
   padding: 210px 0 0 0;
+  box-sizing: border-box;
   z-index: 100;
+  align-items: flex-start;
 }
 
 .nav-menu.open {
@@ -94,32 +105,37 @@ body {
   letter-spacing: 4px;
   text-decoration: none;
   text-transform: uppercase;
-  border-bottom: 3px solid white;
+  display: inline-block;
+  width: fit-content;
   padding-bottom: 18px;
+  border-bottom: 3px solid white;
+  line-height: 1.57;
+  color: #ffffff;
 }
 
-/* ================= TAGS ================= */
-.tags {
-  font-size: 8px;
-  line-height: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+.nav-menu a:hover {
+  color: #FF00BA;
 }
 
-/* ================= CONTENT RESET ================= */
+
+/* Content-Section */
 .section:last-of-type .inner {
-  padding-top: 0;
+  padding-top: 0px;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
+
+
+  
+  
+   @media (max-width: 768px) {
+
 
   body {
     height: auto;
     overflow-x: hidden;
   }
 
+  /* ================= HEADER ================= */
   .section:first-of-type .inner {
     display: flex;
     justify-content: space-between;
@@ -136,6 +152,7 @@ body {
     margin-left: auto;
   }
 
+  /* ================= CONTENT ================= */
   .section:not(:first-of-type) .inner {
     display: flex;
     flex-direction: column;
@@ -143,29 +160,41 @@ body {
     gap: 20px;
   }
 
+  /* nur CONTENT-Bereich beeinflussen */
   .section:not(:first-of-type) .inner > div {
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* ORDER */
-  .section:not(:first-of-type) .inner > div:nth-child(1) { order: 4; }
-  .section:not(:first-of-type) .inner > div:nth-child(2) { order: 1; }
-  .section:not(:first-of-type) .inner > div:nth-child(3) { order: 2; }
+  /* ================= REIHENFOLGE ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(1) { order: 4; } /* Tags */
+  .section:not(:first-of-type) .inner > div:nth-child(2) { order: 1; } /* Bild */
+  .section:not(:first-of-type) .inner > div:nth-child(3) { order: 2; } /* Vierecke + Text */
 
-  /* IMAGE */
+  /* ================= BILD ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(2) {
+    padding: 0 0 25px 0 !important;
+  }
+
   .section:not(:first-of-type) .inner > div:nth-child(2) img {
     width: 100% !important;
   }
 
-  /* TEXT */
-  .section:not(:first-of-type) .inner > div:nth-child(3) > div:last-child {
-    font-size: 14px;
-    line-height: 1.7;
-    padding-top: 40px;
+  /* ================= VIELECKE ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(3) > div:first-child > div {
+    width: 25px !important;
+    height: 25px !important;
   }
 
-  /* TAGS spacing */
+  /* ================= TEXT ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(3) > div:last-child {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    padding-top: 40px;
+    bottom: 40px;
+  }
+
+  /* ================= TAGS ================= */
   .tags {
     margin-top: 40px;
   }
@@ -173,11 +202,15 @@ body {
 
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<div class="section">
+
+
+
+
+
+<!-- ================= HEADER ================= -->
+<div class="section" style="position: relative;">
   <div class="inner">
 
     <div class="logo">
@@ -189,58 +222,65 @@ body {
     <div></div>
     <div></div>
 
-    <div class="burger" onclick="toggleMenu()">
+    <div class="burger" id="burger" onclick="toggleMenu()">
       <span></span>
       <span></span>
     </div>
 
     <div class="nav-menu" id="navMenu">
-      <a href="#">DESIGN</a>
-      <a href="#">FOCUS</a>
-      <a href="#">STORY</a>
-      <a href="#">HALLO</a>
+      <a href="index.html#design">DESIGN</a>
+      <a href="index.html#focus">FOCUS</a>
+      <a href="index.html#story">STORY</a>
+      <a href="index.html#hallo">HALLO</a>
     </div>
 
   </div>
 </div>
 
-<!-- CONTENT -->
+<!-- ================= CONTENT ================= -->
 <div class="section">
   <div class="inner">
 
-    <!-- TAGS -->
-    <div class="tags">
-      <div># PLAKATE</div>
-      <div># BRAND</div>
-      <div># DESIGN</div>
-    </div>
-
-    <!-- IMAGE -->
-    <div>
-      <div style="position:relative;">
-        <img src="../04_portfolio/c_christian_mockup.jpg"
-             style="width:95%; height:auto; display:block;">
-        <img src="../04_portfolio/c_christian.jpg"
-             style="width:95%; height:auto; position:absolute; top:0; left:0; opacity:0;">
+    <!-- LINKS: Tags -->
+  <div class="tags">
+  <div style="font-size:8px; line-height:2;">
+    <div># PLAKATE</div>
+    <div># BRAND</div>
+    <div># DESIGN</div>
       </div>
     </div>
 
-    <!-- TEXT -->
+    <!-- MITTE: Bilder -->
+    <div style="grid-column: span 2; padding-right: 0px; padding-left: 70px;">
+      <div style="position:relative;">
+        <img id="img1" src="../04_portfolio/c_christian_mockup.jpg"
+          style="width:95%; height:auto; display:block; transition:opacity 0.3s ease;">
+        <img id="img2" src="../04_portfolio/c_christian.jpg"
+          style="width:95%; height:auto; display:block; position:absolute; top:0; left:0; opacity:0; transition:opacity 0.3s ease;">
+      </div>
+    </div>
+
+    <!-- RECHTS: Kästchen + Text -->
     <div style="display:flex; flex-direction:column; justify-content:space-between;">
 
-      <div style="display:flex; gap:15px;">
-        <div style="width:30px; height:30px; background:#ffffff;"></div>
-        <div style="width:30px; height:30px; background:#547475;"></div>
+      <div style="display:flex; flex-direction:row; gap:15px;">
+        <div onclick="showImg(1)"
+          style="width:30px; height:30px; background:#ffffff; cursor:pointer;" title="klick mich!"></div>
+        <div onclick="showImg(2)"
+          style="width:30px; height:30px; background:#547475; cursor:pointer;" title="klick mich!"></div>
       </div>
 
       <div style="font-size:10px; line-height:1.7;">
-        <p><strong>TYPOGRAFIE-PLAKAT</strong></p>
-        <p>
+        <p style="margin:0 0 15px;"><strong>TYPOGRAFIE-PLAKAT</strong></p>
+        <p style="margin:0;">
           Ein Buchstabe, eine Geschichte, ganz nah,<br>
           das „C“ steht für eine Person, die besonders war.<br><br>
 
           Name und Geburtstag, fein notiert,<br>
-          ein persönlicher Zweizeiler, der berührt und führt.
+          ein persönlicher Zweizeiler, der berührt und führt.<br><br>
+
+          Auf Wunsch gestaltet, individuell und klar,<br>
+          ein Stück Erinnerung, so einzigartig wie es war.
         </p>
       </div>
 
@@ -250,10 +290,15 @@ body {
 </div>
 
 <script>
-function toggleMenu() {
-  document.querySelector('.burger').classList.toggle('open');
-  document.getElementById('navMenu').classList.toggle('open');
-}
+  function toggleMenu() {
+    document.getElementById('burger').classList.toggle('open');
+    document.getElementById('navMenu').classList.toggle('open');
+  }
+
+  function showImg(n) {
+    document.getElementById('img1').style.opacity = n === 1 ? '1' : '0';
+    document.getElementById('img2').style.opacity = n === 2 ? '1' : '0';
+  }
 </script>
 
 </body>
