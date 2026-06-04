@@ -217,31 +217,21 @@ body {
   }
 
   
-  /* ================= UNTERE BILDER ================= */
+ /* ================= UNTERE BILDER ================= */
 
-  /* 👉 WICHTIG: KEIN display:none mehr! */
   body > div:not(.section) {
     display: flex;
-    justify-content: center;
-    padding: -10px 0!important;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* 👈 Abstand zwischen den Bildern */
   }
 
   body > div:not(.section) img {
     width: 100% !important;
     height: auto;
     display: block;
-    margin: -20px 0 !important;
+    margin: 0 !important; /* 👈 entfernt Standard-Abstände */
   }
-
-  .linie-wrapper,
-  .linie-wrapper::before {
-    display: none !important;
-  }
-
-  body > div[style*="justify-content:right"] {
-    display: none !important;
-  }
-
 
 }
 
