@@ -197,12 +197,16 @@ body {
     display: block;
   }
 
-  /* TEXT */
-  .section:not(:first-of-type) .inner > div:nth-child(3) {
-    order: 2;
-    font-size: 20px !important;
-    line-height: 1.7 !important;
-    margin: 20px;
+ /* TEXT */
+.section:not(:first-of-type) .inner > div:nth-child(3) {
+  order: 2;
+  margin: 20px;
+}
+
+/* echte Typo (dein Problem!) */
+.section:not(:first-of-type) .inner > div:nth-child(3) div[style*="font-size"] {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
   }
 
   /* ================= UNTERE BILDER ================= */
