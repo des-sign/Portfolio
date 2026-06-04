@@ -156,6 +156,11 @@ body {
     overflow-x: hidden;
   }
 
+      body > div:not(.section) {
+    margin: 0 !important;
+  }
+
+  
   /* ================= HEADER ================= */
   .section:first-of-type .inner {
     display: flex;
@@ -163,6 +168,9 @@ body {
     align-items: center;
     padding: 20px;
   }
+
+
+  
 
   /* ================= CONTENT ================= */
   .section:not(:first-of-type) .inner {
@@ -256,6 +264,10 @@ body {
 
     div[style*="height: 200px"] {
     display: none !important;
+  }
+
+   .linie-wrapper {
+    display: none;
   }
 }
   
