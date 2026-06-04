@@ -185,27 +185,35 @@ body {
 
   /* ================= REIHENFOLGE ================= */
 
-  /* Bild (immer 2. div in deiner Struktur) */
-  .section:not(:first-of-type) .inner > div:nth-child(2) {
-    order: 1;
-    padding: 0 !important;
+
+  /* Reihenfolge: Bild, Vierecke, Text, Tags */
+  .inner > div:nth-child(1) { order: 4; } /* Tags */
+  .inner > div:nth-child(2) { order: 1; } /* Bild */
+  .inner > div:nth-child(3) { order: 2; } /* Vierecke + Text */
+
+      /* Bild volle Breite */
+  .inner > div:nth-child(2) {
+    padding: 0 0 40px 0 !important;
   }
 
+  .inner > div:nth-child(2) img {
+    width: 100% !important;
+  }
  
-  /* Text */
-  .section:not(:first-of-type) .inner > div:nth-child(3) {
+ /* Text größer */
+  .inner > div:nth-child(3) > div:last-child {
     font-size: 14px !important;
     line-height: 1.7 !important;
-    margin: 0 !important;
+    padding-top: 40px;
+    bottom: 40px;
   }
-
-
-
   
 
   /* Tags (immer 1. div) */
-  .tags {
-    order: 3;
+.tags {
+    margin-top: 40px;
+  }
+
   }
 
   /* ================= BILDER ================= */
