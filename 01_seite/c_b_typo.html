@@ -162,7 +162,20 @@ body {
     box-sizing: border-box;
   }
 
-  
+   /* einfach tauschen über Flex am Body */
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body > div:not(.section):nth-of-type(4) {
+    order: 2;
+  }
+
+  body > div:not(.section):nth-of-type(5) {
+    order: 1;
+  }
+}
 
   /* Reihenfolge: Bild, Vierecke, Text, Tags */
   .inner > div:nth-child(1) { order: 4; } /* Tags */
