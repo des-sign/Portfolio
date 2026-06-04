@@ -43,59 +43,86 @@ body {
   padding: 40px 40px 40px 40px;
 }
 
-/* ================= HEADER FIX ================= */
-
-.inner {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
-  padding: 40px;
-  position: relative;
-}
-
-/* LOGO LINKS */
-.logo {
-  grid-column: 1;
-  display: flex;
-  align-items: center;
-}
-
+/* ================= HEADER ================= */
 .logo img {
   height: 11px;
 }
 
-/* BURGER RECHTS */
+/* BURGER */
 .burger {
   grid-column: 4;
-  justify-self: end;
   display: flex;
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
+  align-items: flex-start;
+  position: relative;
   z-index: 200;
 }
 
-/* BURGER STRICHE */
 .burger span {
-  width: 26px;
+  width: 25px;
   height: 3px;
   background: white;
   transition: all 0.3s ease;
+  display: block;
+  transform-origin: center;
 }
 
-/* NAV MENU (overlay statt grid) */
+.burger.open span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* MENÜ */
 .nav-menu {
+  grid-column: 4;
   display: none;
   position: absolute;
-  top: 60px;
-  right: 40px;
-  flex-direction: column;
-  gap: 60px;
+  gap: 100px;
+  top: 0;
+  right: 50px;
   width: 220px;
+  height: 100%;
+  flex-direction: column;
+  justify-self: start;
+  justify-content: flex-start;
+  padding: 210px 0 0 0;
+  box-sizing: border-box;
   z-index: 100;
-  background: rgba(0,0,0,0.9);
-  padding: 40px;
+  align-items: flex-start;
 }
 
+.nav-menu.open {
+  display: flex;
+}
+
+.nav-menu a {
+  font-size: 35px;
+  letter-spacing: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  width: fit-content;
+  padding-bottom: 18px;
+  border-bottom: 3px solid white;
+  line-height: 1.57;
+  color: #ffffff;
+}
+
+.nav-menu a:hover {
+  color: #FF00BA;
+}
+
+
+/* Content-Section */
+.section:last-of-type .inner {
+  padding-top: 0px;
+}
+  
 /* OPEN STATE */
 .nav-menu.open {
   display: flex;
