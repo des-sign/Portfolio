@@ -127,13 +127,12 @@ body {
 
   
   
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
 
 
-  /* ================= GLOBAL ================= */
   body {
-    overflow-x: hidden;
     height: auto;
+    overflow-x: hidden;
   }
 
   /* ================= HEADER ================= */
@@ -161,42 +160,43 @@ body {
     gap: 20px;
   }
 
-  /* WICHTIG: kein nth-child, kein order */
-  .section:not(:first-of-type) .inner > * {
+  /* nur CONTENT-Bereich beeinflussen */
+  .section:not(:first-of-type) .inner > div {
     width: 100%;
     box-sizing: border-box;
   }
 
+  /* ================= REIHENFOLGE ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(1) { order: 4; } /* Tags */
+  .section:not(:first-of-type) .inner > div:nth-child(2) { order: 1; } /* Bild */
+  .section:not(:first-of-type) .inner > div:nth-child(3) { order: 2; } /* Vierecke + Text */
+
   /* ================= BILD ================= */
-  .section:not(:first-of-type) img {
+  .section:not(:first-of-type) .inner > div:nth-child(2) {
+    padding: 0 0 40px 0 !important;
+  }
+
+  .section:not(:first-of-type) .inner > div:nth-child(2) img {
     width: 100% !important;
-    height: auto;
-    display: block;
+  }
+
+  /* ================= VIELECKE ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(3) > div:first-child > div {
+    width: 25px !important;
+    height: 25px !important;
   }
 
   /* ================= TEXT ================= */
-  .section:not(:first-of-type) .text,
-  .section:not(:first-of-type) p {
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  /* ================= OPTIONAL: VIELECKE ================= */
-  /* nur stylen wenn vorhanden – kein Layout-Zwang */
-  .vierecke {
-    display: flex;
-    gap: 6px;
-    margin-top: -10px;
-  }
-
-  .vierecke > div {
-    width: 25px;
-    height: 25px;
+  .section:not(:first-of-type) .inner > div:nth-child(3) > div:last-child {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    padding-top: 40px;
+    bottom: 40px;
   }
 
   /* ================= TAGS ================= */
   .tags {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
 
