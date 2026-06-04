@@ -228,10 +228,16 @@ body {
     margin: -20px 0;
   }
   
+ .linie-wrapper,
   .linie-wrapper::before {
-    display: none;
+    display: none !important;
   }
-}
+
+  body > div[style*="justify-content:right"] {
+    display: none !important;
+  }
+
+  }
 }
   
 </style>
