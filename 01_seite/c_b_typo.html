@@ -148,6 +148,17 @@ body {
     padding: 20px;
   }
 
+   /* NEU: fixiert Logo & Burger */
+  .section:first-of-type .logo {
+    order: 1;
+  }
+
+  .section:first-of-type .burger {
+    order: 2;
+    margin-left: auto;
+  }
+
+
   /* ================= CONTENT ================= */
   .section:not(:first-of-type) .inner {
     display: flex;
@@ -162,19 +173,7 @@ body {
     box-sizing: border-box;
   }
 
-   /* einfach tauschen über Flex am Body */
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  body > div:not(.section):nth-of-type(4) {
-    order: 2;
-  }
-
-  body > div:not(.section):nth-of-type(5) {
-    order: 1;
-  }
+ 
 }
 
   /* Reihenfolge: Bild, Vierecke, Text, Tags */
