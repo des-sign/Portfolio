@@ -227,17 +227,13 @@ body {
     width: 90% !important;
     height: auto;
     display: block;
-    margin: 0 0 -50px 0 !important; /* 👈 entfernt Standard-Abstände */
+    margin: 0 !important; /* 👈 entfernt Standard-Abstände */
     
   }
 
-  .linie-wrapper, 
-    .linie-wrapper::before { 
-      display: none !important; 
-    } 
-  body > div[style*="justify-content:right"] { 
-    display: none !important; 
-  }
+div[style*="width: 2px"][style*="background"] {
+  display: none !important;
+}
 
 }
   
