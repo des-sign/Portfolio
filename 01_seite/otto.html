@@ -227,10 +227,18 @@ body {
   }
 
   body > div:not(.section) img {
-    width: 100% !important;
+    width: 90% !important;
     height: auto;
     display: block;
     margin: 0 !important; /* 👈 entfernt Standard-Abstände */
+  }
+
+  .linie-wrapper, 
+    .linie-wrapper::before { 
+      display: none !important; 
+    } 
+  body > div[style*="justify-content:right"] { 
+    display: none !important; 
   }
 
 }
