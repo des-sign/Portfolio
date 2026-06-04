@@ -312,51 +312,39 @@ body {
   background: white;
 }
   
+
+
+
 @media (max-width: 768px) {
-  body {
-    zoom: 0.28;
-    overflow-x: hidden;
-  }
-}
-  
 
-
-
-
-
-  @media (max-width: 768px) {
-
-  /* ================= GLOBAL ================= */
+  /* ================= BODY ================= */
   body {
     height: auto;
     overflow-x: hidden;
   }
 
-  /* ================= NAV / HEADER ================= */
+  /* ================= HEADER (GRÖSSER + SAUBER) ================= */
   .section:first-of-type .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 24px;
   }
 
-  .section:first-of-type .logo {
-    order: 1;
+  .logo img {
+    height: 18px !important; /* war 11px → jetzt sichtbar */
+  }
+
+  .burger span {
+    width: 32px !important;  /* größer */
+    height: 3px;
   }
 
   .section:first-of-type .burger {
-    order: 2;
     margin-left: auto;
   }
 
-  /* ================= HERO (STARTBILD = 2. SECTION) ================= */
-  .section:nth-of-type(2) img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* ================= GLOBAL CONTENT ================= */
+  /* ================= STANDARD MOBILE LAYOUT ================= */
   .section:not(:first-of-type) .inner {
     display: flex;
     flex-direction: column;
@@ -364,31 +352,52 @@ body {
     gap: 16px;
   }
 
+  .section:not(:first-of-type) .inner > div {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* ================= ALLE BILDER FULL WIDTH ================= */
   .section:not(:first-of-type) img {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
   }
 
-  /* ================= TEXT + TAGS (IMMER GLEICH) ================= */
-  .section:not(:first-of-type) .text {
-    font-size: 14px;
-    line-height: 1.7;
+  /* ================= TEXT ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(3) {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
   }
 
+  /* ================= TAGS ================= */
   .tags {
-    margin-top: 10px;
+    font-size: 8px;
+    line-height: 2;
   }
 
-  .section.type-double img {
-    width: 100%;
-    display: block;
+  /* ================= TYPE 4 FIX ================= */
+  .type-double {
+    display: flex !important;
+    flex-direction: column !important; /* WICHTIG: untereinander */
+    gap: 16px !important;
   }
 
-  .section.type-double img + img {
-    margin-top: 0;
+  .type-double img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
   }
-</style>
+
+  /* ================= LINIE KOMPLETT ENTFERNEN ================= */
+  .linie-wrapper,
+  .linie-wrapper::before,
+  div[style*="width: 2px"],
+  div[style*="height:200px"] {
+    display: none !important;
+  }
+
+}
 </head>
 <body>
 
