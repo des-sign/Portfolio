@@ -233,9 +233,15 @@ body {
     margin: 20px 0;
   }
 
-    .linie-wrapper {
-    display: none;
+  .linie-wrapper,
+  .linie-wrapper::before {
+    display: none !important;
   }
+
+  body > div[style*="justify-content:right"] {
+    display: none !important;
+  }
+
 
 }
 
