@@ -1,29 +1,39 @@
+nee, seitdem ich mit dir das mache geht es immer weiter kaputt
+es soll so sein wie hier
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>des_sign</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASIC ================= */
+/* FONT */
+@font-face {
+  font-family: "Temeraire";
+  src: url("../02_fonts/Temeraire Display Bk.ttf");
+}
+
+
+
+/* BASIC */
 body {
   margin: 0;
   max-width: 1500px;
+  height: 1080px; 
   background: black;
   color: white;
   font-family: 'Roboto Flex', sans-serif;
 }
 
 * {
-  color: white;
-  box-sizing: border-box;
+  color: rgb(255, 255, 255);
 }
 
-/* ================= DESKTOP GRID ================= */
+/* ================= GRID ================= */
 .section {
   width: 100%;
 }
@@ -31,14 +41,30 @@ body {
 .inner {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 1fr;
-  padding: 40px;
+  padding: 40px 40px 40px 40px;
 }
 
-/* ================= HEADER ================= */
+/* ================= HEADER FIX ================= */
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  padding: 40px;
+  position: relative;
+}
+
+/* LOGO LINKS */
+.logo {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
   height: 11px;
 }
 
+/* BURGER RECHTS */
 .burger {
   grid-column: 4;
   justify-self: end;
@@ -49,29 +75,81 @@ body {
   z-index: 200;
 }
 
+/* BURGER STRICHE */
 .burger span {
   width: 26px;
   height: 3px;
   background: white;
+  transition: all 0.3s ease;
 }
 
-/* NAV */
+/* NAV MENU (overlay statt grid) */
 .nav-menu {
   display: none;
   position: absolute;
   top: 60px;
   right: 40px;
   flex-direction: column;
-  gap: 40px;
-  padding: 30px;
+  gap: 60px;
+  width: 220px;
+  z-index: 100;
   background: rgba(0,0,0,0.9);
+  padding: 40px;
 }
 
+/* OPEN STATE */
 .nav-menu.open {
   display: flex;
 }
 
-/* ================= MOBILE FIX ================= */
+/* LINKS */
+.nav-menu a {
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 3px solid white;
+  padding: 10px 5px;
+  color: white;
+}
+
+.nav-menu a:hover {
+  color: #FF00BA;
+}
+
+/* BURGER OPEN ANIMATION */
+.burger.open span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+
+/* ================= LINIE ================= */
+.linie-wrapper {
+  position: relative;
+  margin-top: 50px;
+}
+
+.linie-wrapper .inner div {
+  position: relative;
+  top: 50px;
+}
+
+.linie-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  top: -50px;
+  bottom: 0;
+  background: white;
+}
+  
+
 @media (max-width: 768px) {
 
   body {
@@ -79,23 +157,24 @@ body {
     overflow-x: hidden;
   }
 
-  /* HEADER */
+  /* ================= HEADER ================= */
   .section:first-of-type .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 18px 20px;
   }
 
   .logo img {
-    height: 18px;
+    height: 18px !important;
   }
 
   .burger span {
-    width: 32px;
+    width: 32px !important;
+    height: 3px;
   }
 
-  /* CONTENT -> STACK */
+  /* ================= CONTENT GRID → MOBILE ================= */
   .section:not(:first-of-type) .inner {
     display: flex;
     flex-direction: column;
@@ -104,74 +183,82 @@ body {
   }
 
   .section:not(:first-of-type) .inner > div {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Bild */
+  .section:not(:first-of-type) .inner > div:nth-child(2) img {
     width: 100% !important;
-  }
-
-  /* ORDER FIX (DEIN STRUKTUR SYSTEM BLEIBT) */
-  .section:not(:first-of-type) .inner > div:nth-child(1) {
-    order: 3; /* tags */
-  }
-
-  .section:not(:first-of-type) .inner > div:nth-child(2) {
-    order: 1; /* bild */
-    padding: 0 !important;
-  }
-
-  .section:not(:first-of-type) .inner > div:nth-child(3) {
-    order: 2; /* text */
-  }
-
-  /* IMAGES FULL WIDTH */
-  .section:not(:first-of-type) img {
-    width: 100% !important;
-    height: auto !important;
+    height: auto;
     display: block;
   }
 
-  /* TYPE 4 / MULTI IMAGES */
-  .type-4 {
+  /* Text */
+  .section:not(:first-of-type) .inner > div:nth-child(3) {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
+  }
+
+  /* ================= UNTERE BILDER ================= */
+  /* WICHTIG: NICHT BODY HACKS – nur flex im Container */
+  body > div:not(.section) {
     display: flex !important;
     flex-direction: column !important;
-    gap: 16px !important;
+    align-items: center;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
   }
 
-  .type-4 img {
+  body > div:not(.section) img {
     width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
   }
 
-  /* REMOVE ALL LINES */
-  .linie-wrapper,
+  /* ================= LINIEN KOMPLETT AUS ================= */
+  div[style*="width: 2px"],
   div[style*="height: 200px"],
-  div[style*="width: 2px"] {
+  .linie-wrapper {
     display: none !important;
   }
-}
 
+}
+  
 </style>
 </head>
-
 <body>
 
+
+
+
+
 <!-- ================= HEADER ================= -->
-<div class="section">
+<div class="section" style="position: relative;">
   <div class="inner">
 
     <div class="logo">
-      <img src="../05_txt-grafik/des_sign_weiss.png">
+      <a href="../index.html">
+        <img src="../05_txt-grafik/des_sign_weiss.png">
+      </a>
     </div>
 
     <div></div>
     <div></div>
 
-    <div class="burger" onclick="toggleMenu()">
+    <div class="burger" id="burger" onclick="toggleMenu()">
       <span></span>
       <span></span>
     </div>
 
     <div class="nav-menu" id="navMenu">
-      <a href="#">DESIGN</a>
-      <a href="#">FOCUS</a>
-      <a href="#">STORY</a>
+      <a href="index.html#design">DESIGN</a>
+      <a href="index.html#focus">FOCUS</a>
+      <a href="index.html#story">STORY</a>
+      <a href="index.html#hallo">HALLO</a>
     </div>
 
   </div>
@@ -181,51 +268,77 @@ body {
 <div class="section">
   <div class="inner">
 
-    <!-- TAGS -->
-    <div>
-      <div style="font-size:8px; line-height:2;">
-        <div># TAG 1</div>
-        <div># TAG 2</div>
-        <div># TAG 3</div>
+    <!-- LINKS: Tags -->
+          <div class="tags">
+  <div style="font-size:8px; line-height:2;">
+        <div># LOGO</div>
+        <div># CORPORATE</div>
+        <div># FOLDER</div>
       </div>
     </div>
 
-    <!-- IMAGE BLOCK -->
-    <div>
-      <img src="../04_portfolio/typo_design_plakat.jpg">
+    <!-- MITTE: Bilder -->
+     <div style="grid-column: span 2; padding-right: 0px; padding-left: 70px; cursor: pointer;" title="↓">
+      <div style="position:relative;">
+        <img id="img1" src="../04_portfolio/kurzundknackig_logo.jpg"
+          style="width:95%; height:auto; display:block; transition:opacity 0.3s ease;">
+         </div>
     </div>
 
-    <!-- TEXT -->
-    <div>
-      <p style="font-size:10px; line-height:1.7;">
-        <strong>TITEL</strong><br><br>
-        Dein Text bleibt hier unverändert.
-      </p>
+    <!-- RECHTS: Text -->
+    <div style="display:flex; flex-direction:column; justify-content:flex-end;">
+
+     
+      <div style="font-size:10px; line-height:1.7;">
+        <p style="margin:0 0 15px;"><strong>LOGO & DESIGN</strong></p>
+        <p style="margin:0;">
+
+        Die Möhre — reduziert, lebendig, keck,  <br>
+        zieht den Blick und setzt den Fleck.<br><br>
+
+        Magenta, Schwarz und Weiß im Spiel,  <br>
+        jede Typo trifft ihr Ziel.<br><br>
+
+        So wird aus Form und Farbe :   <br>
+        ein Endlos-Flyer für die Marke.
+
+        </p>
+      </div>
+
     </div>
 
   </div>
 </div>
 
-<!-- ================= TYPE 4 (2 IMAGES untereinander) ================= -->
-<div class="section">
-  <div class="inner">
-
-    <div></div>
-
-    <div class="type-4">
-      <img src="../04_portfolio/typo_design_plakat_2.jpg">
-      <img src="../04_portfolio/G_TYP-Grafik.jpg">
-    </div>
-
-    <div></div>
-
-  </div>
+<!-- TRENNLINIE -->
+<div style="display:flex; justify-content:right; margin: -40px -30px 50px 0;">
+  <div style="width: 2px; height: 200px; background: white;"></div>
 </div>
+
+<!-- ================= ZWEI BILDER ================= -->
+<div style="display:flex; justify-content:right; gap:0px; margin: 0 300px 80px 0;">
+  <img src="../04_portfolio/kurzundknackig_logo_raster.jpg" style="width:40%; height: auto; object-fit:cover;">
+</div>
+
+<div style="display:flex; justify-content:center; gap:0px; margin: 0 -30px 0 0;">
+  <img src="../04_portfolio/kurzundknackig_folder.jpg" style="width:60%; height: auto; object-fit:cover;">
+</div>
+
+<br>
+<br>
+<br>
+
 
 <script>
-function toggleMenu() {
-  document.getElementById('navMenu').classList.toggle('open');
-}
+  function toggleMenu() {
+    document.getElementById('burger').classList.toggle('open');
+    document.getElementById('navMenu').classList.toggle('open');
+  }
+
+  function showImg(n) {
+    document.getElementById('img1').style.opacity = n === 1 ? '1' : '0';
+    document.getElementById('img2').style.opacity = n === 2 ? '1' : '0';
+  }
 </script>
 
 </body>
