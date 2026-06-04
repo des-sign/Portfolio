@@ -161,38 +161,51 @@ body {
 
 
   
- /* Menü-Overlay Effekt nur mobil */
+ /* MENU CONTAINER */
   .nav-menu {
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    transition: all 0.4s ease;
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+
+    width: auto;
+    height: auto;
+
+    flex-direction: column;
+    align-items: flex-end; /* rechts ausrichten */
+    gap: 15px;
+
+    padding: 0;
+    z-index: 1000;
   }
 
-  /* wenn Menü geöffnet ist */
+  /* OPEN STATE */
   .nav-menu.open {
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    padding: 180px 40px 40px 40px;
-
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-
     display: flex;
   }
 
-  /* Links schöner im Overlay */
-  .nav-menu.open a {
-    font-size: 28px;
+  /* LINKS = nur Text-Hintergrund schwarz */
+  .nav-menu a {
+    font-size: 24px;
     letter-spacing: 3px;
-    border-bottom: 2px solid white;
-    padding-bottom: 10px;
+
+    color: white;
+
+    background: rgba(0, 0, 0, 0.85); /* nur hinter Text */
+    padding: 8px 12px;
+
+    border-bottom: none;
+
+    width: fit-content;
+    text-align: right;
   }
 
+  .nav-menu a:hover {
+    color: #FF00BA;
+  }
+
+
+  
   
   
   /* ================= HEADER ================= */
