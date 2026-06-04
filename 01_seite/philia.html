@@ -149,6 +149,22 @@ body {
   background: white;
 }
 
+  .next {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0;
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  text-decoration: none;
+  color: white;
+}
+
+.next:active {
+  transform: translateX(4px);
+}
+
+
   
   
 @media (max-width: 768px) {
@@ -159,49 +175,27 @@ body {
   }
 
 
-/* MENU CONTAINER */
+/* kein Menü */
   .nav-menu {
+    display: none !important;
+  }
+
+  /* kein Burger-Icon mehr */
+  .burger span {
     display: none;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-
-    width: auto;
-    height: auto;
-
-    flex-direction: column;
-    align-items: flex-end; /* rechts ausrichten */
-    gap: 15px;
-
-    padding: 0;
-    z-index: 1000;
   }
 
-  /* OPEN STATE */
-  .nav-menu.open {
-    display: flex;
+  /* neuer Pfeil */
+  .burger::before {
+    content: "›";
+    font-size: 32px;
+    line-height: 1;
+    display: block;
   }
 
-  /* LINKS = nur Text-Hintergrund schwarz */
-  .nav-menu a {
-    font-size: 24px;
-    letter-spacing: 3px;
-
-    color: white;
-
-    background: rgba(0, 0, 0, 0.85); /* nur hinter Text */
-    padding: 8px 12px;
-
-    border-bottom: none;
-
-    width: fit-content;
-    text-align: right;
+  .burger:active::before {
+    transform: translateX(4px);
   }
-
-  .nav-menu a:hover {
-    color: #FF00BA;
-  }
-  
   
   /* ================= HEADER ================= */
   .section:first-of-type .inner {
@@ -392,6 +386,11 @@ body {
     document.getElementById('img1').style.opacity = n === 1 ? '1' : '0';
     document.getElementById('img2').style.opacity = n === 2 ? '1' : '0';
   }
+
+
+  <a class="next" href="projekt2.html">›</a>
+
+  
 </script>
 
 </body>
