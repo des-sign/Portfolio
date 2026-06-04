@@ -157,6 +157,75 @@ body {
 }
   
 </style>
+
+
+
+
+  @media (max-width: 768px) {
+
+  /* ================= GLOBAL ================= */
+  body {
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  /* ================= NAV / HEADER ================= */
+  .section:first-of-type .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .section:first-of-type .logo {
+    order: 1;
+  }
+
+  .section:first-of-type .burger {
+    order: 2;
+    margin-left: auto;
+  }
+
+  /* ================= HERO (STARTBILD = 2. SECTION) ================= */
+  .section:nth-of-type(2) img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ================= GLOBAL CONTENT ================= */
+  .section:not(:first-of-type) .inner {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .section:not(:first-of-type) img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ================= TEXT + TAGS (IMMER GLEICH) ================= */
+  .section:not(:first-of-type) .text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .tags {
+    margin-top: 10px;
+  }
+
+  .section.type-double img {
+    width: 100%;
+    display: block;
+  }
+
+  .section.type-double img + img {
+    margin-top: 0;
+  }
+
 </head>
 <body>
 
