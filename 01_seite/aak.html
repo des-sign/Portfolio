@@ -160,11 +160,21 @@ body {
   }
 
   /* Header bleibt */
-  .section:first-of-type .inner {
+   .section:first-of-type .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+  }
+
+   /* NEU: fixiert Logo & Burger */
+  .section:first-of-type .logo {
+    order: 1;
+  }
+
+  .section:first-of-type .burger {
+    order: 2;
+    margin-left: auto;
   }
 
   /* Content-Grid einspaltig */
