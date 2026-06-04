@@ -185,10 +185,6 @@ body {
 
   /* ================= REIHENFOLGE ================= */
 
-  /* TAGS */
-  .section:not(:first-of-type) .inner > div:nth-child(1) {
-    order: 1;
-  }
 
   /* BILD */
   .section:not(:first-of-type) .inner > div:nth-child(2) {
@@ -209,10 +205,16 @@ body {
   }
 
   .section:not(:first-of-type) .inner > div:nth-child(3) div[style*="font-size"] {
-    font-size: 16px !important;
+    font-size: 14px !important;
     line-height: 1.7 !important;
   }
 
+    /* TAGS */
+  .section:not(:first-of-type) .inner > div:nth-child(1) {
+    order: 1;
+  }
+
+  
   /* ================= UNTERE BILDER ================= */
 
   /* 👉 WICHTIG: KEIN display:none mehr! */
