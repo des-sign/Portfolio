@@ -186,9 +186,15 @@ body {
   /* ================= REIHENFOLGE ================= */
 
 
+ 
+  /* TAGS */
+  .section:not(:first-of-type) .inner > div:nth-child(1) {
+    order: 3;
+  }
+
   /* BILD */
   .section:not(:first-of-type) .inner > div:nth-child(2) {
-    order: 2;
+    order: 1;
     padding: 0 !important;
   }
 
@@ -198,20 +204,16 @@ body {
     display: block;
   }
 
-  /* TEXT */
-  .section:not(:first-of-type) .inner > div:nth-child(3) {
-    order: 3;
-    margin: 0;
-  }
+ /* TEXT */
+.section:not(:first-of-type) .inner > div:nth-child(3) {
+  order: 2;
+  margin: 20px;
+}
 
-  .section:not(:first-of-type) .inner > div:nth-child(3) div[style*="font-size"] {
-    font-size: 14px !important;
-    line-height: 1.7 !important;
-  }
-
-    /* TAGS */
-  .section:not(:first-of-type) .inner > div:nth-child(1) {
-    order: 1;
+/* echte Typo (dein Problem!) */
+.section:not(:first-of-type) .inner > div:nth-child(3) div[style*="font-size"] {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
   }
 
   
