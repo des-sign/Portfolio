@@ -128,21 +128,31 @@ body {
 
   
   
-  @media (max-width: 768px) {
+  
+
+ @media (max-width: 768px) {
 
   body {
     height: auto;
     overflow-x: hidden;
   }
 
+  /* ================= HEADER ================= */
+  .section:first-of-type .inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+  }
 
-  
-/* Burger aus */
+  .section:first-of-type .logo {
+    order: 1;
+  }
+
   .burger {
     display: none !important;
   }
 
-  /* Pfeil im Header rechts oben */
   .next {
     display: block;
     position: absolute;
@@ -154,21 +164,7 @@ body {
     text-decoration: none;
   }
 
-  .next:active {
-    transform: translateX(4px);
-  }
-  
-  
-  
-  /* ================= HEADER ================= */
-  .section:first-of-type .inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-  }
-
-  /* ================= CONTENT ================= */
+  /* ================= CONTENT -> WICHTIG: KEIN GRID MEHR ================= */
   .section:not(:first-of-type) .inner {
     display: flex;
     flex-direction: column;
@@ -176,71 +172,51 @@ body {
     gap: 20px;
   }
 
-  /* alle Elemente sauber */
+  /* alle direkten Kinder stabil */
   .section:not(:first-of-type) .inner > div {
     width: 100%;
+    box-sizing: border-box;
   }
 
-  /* ================= REIHENFOLGE ================= */
-
-
- 
-  /* TAGS */
+  /* ================= ORDER FIX (klar & stabil) ================= */
   .section:not(:first-of-type) .inner > div:nth-child(1) {
-    order: 3;
+    order: 3; /* tags */
   }
 
-  /* BILD */
   .section:not(:first-of-type) .inner > div:nth-child(2) {
-    order: 1;
+    order: 1; /* bild */
     padding: 0 !important;
   }
 
+  .section:not(:first-of-type) .inner > div:nth-child(3) {
+    order: 2; /* rechts content */
+  }
+
+  /* ================= IMAGE ================= */
   .section:not(:first-of-type) .inner > div:nth-child(2) img {
     width: 100% !important;
     height: auto;
     display: block;
   }
 
- /* TEXT */
-.section:not(:first-of-type) .inner > div:nth-child(3) {
-  order: 2;
-  margin: 20px;
-}
-
-/* echte Typo (dein Problem!) */
-.section:not(:first-of-type) .inner > div:nth-child(3) div[style*="font-size"] {
-  font-size: 16px !important;
-  line-height: 1.7 !important;
+  /* ================= COLOR BOXES ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(3) > div:first-child div {
+    width: 25px !important;
+    height: 25px !important;
   }
 
-  
- /* ================= UNTERE BILDER ================= */
-
-  body > div:not(.section) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1px; /* 👈 Abstand zwischen den Bildern */
+  /* ================= TEXT ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(3) > div:last-child {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    padding-top: 20px;
   }
 
-  body > div:not(.section) img {
-    width: 90% !important;
-    height: auto;
-    display: block;
-    margin: 0 !important; /* 👈 entfernt Standard-Abstände */
-    
+  /* ================= TAGS ================= */
+  .tags {
+    margin-top: 20px;
   }
-
-div[style*="width: 2px"][style*="background"] {
-  display: none !important;
 }
-
-}
-  
-</style>
-</head>
-<body>
 
 
 
