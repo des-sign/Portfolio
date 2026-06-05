@@ -163,7 +163,24 @@ body {
     color: white;
     text-decoration: none;
   }
+ /* ================= HEADER ================= */
+  .section:first-of-type .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
 
+  .section:first-of-type .logo {
+    order: 1;
+  }
+
+  .section:first-of-type .burger {
+    order: 2;
+    margin-left: auto;
+  }
+
+   
   /* ================= CONTENT -> WICHTIG: KEIN GRID MEHR ================= */
   .section:not(:first-of-type) .inner {
     display: flex;
