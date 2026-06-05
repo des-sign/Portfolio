@@ -159,51 +159,28 @@ body {
     overflow-x: hidden;
   }
 
+  /* Burger aus */
+  .burger {
+    display: none !important;
+  }
 
-
-
-/* MENU CONTAINER */
-  .nav-menu {
-    display: none;
+  /* Pfeil im Header rechts oben */
+  .next {
+    display: block;
     position: absolute;
-    top: 60px;
+    top: 5px;
     right: 20px;
-
-    width: auto;
-    height: auto;
-
-    flex-direction: column;
-    align-items: flex-end; /* rechts ausrichten */
-    gap: 15px;
-
-    padding: 0;
-    z-index: 1000;
-  }
-
-  /* OPEN STATE */
-  .nav-menu.open {
-    display: flex;
-  }
-
-  /* LINKS = nur Text-Hintergrund schwarz */
-  .nav-menu a {
-    font-size: 24px;
-    letter-spacing: 3px;
-
+    font-size: 32px;
+    font-weight: 900;
     color: white;
-
-    background: rgba(0, 0, 0, 0.85); /* nur hinter Text */
-    padding: 8px 12px;
-
-    border-bottom: none;
-
-    width: fit-content;
-    text-align: right;
+    text-decoration: none;
   }
 
-  .nav-menu a:hover {
-    color: #FF00BA;
+  .next:active {
+    transform: translateX(4px);
   }
+  
+
 
   
   /* ================= HEADER ================= */
@@ -350,7 +327,7 @@ body {
 
      
       <div style="font-size:10px; line-height:1.7;">
-        <p style="margin:0 0 15px;"><strong>PLAKAT & ONEPAGER</strong></p>
+        <p style="margin:0 0 15px; letter-spacing:0.05em;"><strong>PLAKAT & ONEPAGER</strong></p>
         <p style="margin:0;">
         Jede Spannung wird greifbar gemacht,<br>  
         jeder Blick, jede Bewegung entfacht.<br><br>  
@@ -387,6 +364,7 @@ body {
 <br>
 <br>
 
+  <a class="next" href=„otto.html">›</a>
 
 <script>
   function toggleMenu() {
