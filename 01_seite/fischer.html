@@ -130,29 +130,21 @@ body {
   
   
 
- @media (max-width: 768px) {
+  @media (max-width: 768px) {
+
 
   body {
     height: auto;
     overflow-x: hidden;
   }
 
-  /* ================= HEADER ================= */
-  .section:first-of-type .inner {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px;
-  }
 
-  .section:first-of-type .logo {
-    order: 1;
-  }
-
+ /* Burger aus */
   .burger {
     display: none !important;
   }
 
+  /* Pfeil im Header rechts oben */
   .next {
     display: block;
     position: absolute;
@@ -163,7 +155,15 @@ body {
     color: white;
     text-decoration: none;
   }
- /* ================= HEADER ================= */
+
+  .next:active {
+    transform: translateX(4px);
+  }
+
+
+
+     
+  /* ================= HEADER ================= */
   .section:first-of-type .inner {
     display: flex;
     justify-content: space-between;
@@ -180,8 +180,7 @@ body {
     margin-left: auto;
   }
 
-   
-  /* ================= CONTENT -> WICHTIG: KEIN GRID MEHR ================= */
+  /* ================= CONTENT ================= */
   .section:not(:first-of-type) .inner {
     display: flex;
     flex-direction: column;
@@ -189,35 +188,28 @@ body {
     gap: 20px;
   }
 
-  /* alle direkten Kinder stabil */
+  /* nur CONTENT-Bereich beeinflussen */
   .section:not(:first-of-type) .inner > div {
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* ================= ORDER FIX (klar & stabil) ================= */
-  .section:not(:first-of-type) .inner > div:nth-child(1) {
-    order: 3; /* tags */
-  }
+  /* ================= REIHENFOLGE ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(1) { order: 4; } /* Tags */
+  .section:not(:first-of-type) .inner > div:nth-child(2) { order: 1; } /* Bild */
+  .section:not(:first-of-type) .inner > div:nth-child(3) { order: 2; } /* Vierecke + Text */
 
+  /* ================= BILD ================= */
   .section:not(:first-of-type) .inner > div:nth-child(2) {
-    order: 1; /* bild */
-    padding: 0 !important;
+        padding: 0 0 20px 0 !important;
   }
 
-  .section:not(:first-of-type) .inner > div:nth-child(3) {
-    order: 2; /* rechts content */
-  }
-
-  /* ================= IMAGE ================= */
   .section:not(:first-of-type) .inner > div:nth-child(2) img {
     width: 100% !important;
-    height: auto;
-    display: block;
   }
 
-  /* ================= COLOR BOXES ================= */
-  .section:not(:first-of-type) .inner > div:nth-child(3) > div:first-child div {
+  /* ================= VIELECKE ================= */
+  .section:not(:first-of-type) .inner > div:nth-child(3) > div:first-child > div {
     width: 25px !important;
     height: 25px !important;
   }
@@ -226,16 +218,31 @@ body {
   .section:not(:first-of-type) .inner > div:nth-child(3) > div:last-child {
     font-size: 14px !important;
     line-height: 1.7 !important;
-    padding-top: 20px;
+    padding-top: 40px;
+    bottom: 40px;
   }
 
   /* ================= TAGS ================= */
   .tags {
-    margin-top: 20px;
+    margin-top: 40px;
   }
+
+      /* ================= Logo ================= */
+     .section:first-of-type .logo {
+  order: 0 !important;
+  margin-right: auto;
+}
+
+.section:first-of-type .inner {
+  justify-content: flex-start !important;
+}
 }
 
 </style>
+</head>
+<body>
+
+  
 
 
 <!-- ================= HEADER ================= -->
