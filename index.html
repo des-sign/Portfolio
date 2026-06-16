@@ -1421,8 +1421,8 @@ body {
   
   <label for="toggle" title="klick mich!"></label>
           <div class="link-content">
-            MIT EMPATHIE &amp;<br>
-            DETAILLIEBE<br>
+            MIT EMPATHIE <br>
+            &amp; DETAILLIEBE<br>
             INDIVIDUELLE<br>
             KOMMUNIKAT-<br>
             IONSPROJEKTE<br>
@@ -1704,21 +1704,25 @@ body {
   </div>
 </div>
 
-<!-- HASHTAG TEXT -->
-<div style="padding: 0 350px 0 300px; font-family: 'Temeraire'; font-size: 90px; line-height: 1.5;">
-  #Brand  #Grafik  <br>
-  #Digital #Print
+<!-- KONTAKT -->
+<div style="padding: 40px 40px 80px 40px;">
+  
+<button class="mail-square" id="mailBtn">■</button>
+
+<div class="mail-modal" id="mailModal">
+  <div class="mail-box">
+    <h3>Schreib mir eine Mail</h3>
+
+    <form action="mailto:info@DES-SIGN.DE" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Name">
+      <input type="email" name="email" placeholder="E-Mail">
+      <textarea name="message" placeholder="Nachricht"></textarea>
+      <button type="submit">Senden</button>
+    </form>
+  </div>
 </div>
 
-<br><br><br><br>
-
-<!-- KONTAKT -->
-<div class="story-grid">
-  <div>
-      <!-- Impressum Icon direkt UNTER dem Kontakt -->
-    <a href="impressum.html" class="impressum-box" title="Impressum">
-      i
-    </a>
+  
     <br>
     <p class="contact">
       KOMMUNIKATIONSDESIGN<br><br>
@@ -1728,6 +1732,13 @@ body {
     </p>
   </div>
 </div>
+
+  <!-- HASHTAG TEXT -->
+<div style="padding: 0 350px 0 300px; font-family: 'Temeraire'; font-size: 90px; line-height: 1.5;">
+  #Brand  #Grafik  <br>
+  #Digital #Print
+</div>
+
 
 <br><br><br><br>
 
@@ -1782,6 +1793,14 @@ iWrap.addEventListener('mousemove', (e) => {
 if (window.innerWidth <= 768) {
   window.location.href = "index-mobile.html";
 }
+
+mailModal.addEventListener('click', (e) => {
+  if (e.target === mailModal) {
+    mailModal.classList.remove('active');
+    mailBtn.textContent = '■';
+    isOpen = false;
+  }
+});
   
 </style>
 
