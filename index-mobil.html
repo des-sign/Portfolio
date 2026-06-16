@@ -882,6 +882,68 @@ body {
 
   }
 
+
+/* ================= VIERECK ================= */
+.link-item {
+  position: relative;
+  grid-column: 2 / 4;
+  color: #FF00BA !important;
+  font-family: sans-serif;
+}
+
+/* Checkbox verstecken */
+.link-item input {
+  display: none;
+}
+
+/* ■ Label */
+.link-item label {
+  
+  cursor: pointer;
+  font-size: 75px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FF00BA !important;
+  text-align: right;
+  display: block;
+  float: right;
+}
+
+/* LINKS versteckt */
+.link-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: -60px;
+  white-space: nowrap;
+  flex-direction: column;
+  gap: 6px;
+  color: #FF00BA !important;
+  text-transform: uppercase;
+}
+
+
+/* LINKS sichtbar wenn aktiv */
+.link-item input:checked + label + .link-content {
+  display: flex;
+}
+
+/* LINKS styling */
+.link-content a {
+  color: #FF00BA !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1.0px;
+}
+
+.link-content a:hover {
+  color: #FF00BA !important;
+}
+
+
+  
+  
   
   /* ── Impressum ── */
 .impressum {
