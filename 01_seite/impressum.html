@@ -3,6 +3,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>des_sign</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
@@ -41,6 +42,90 @@ body {
   grid-template-columns: 1fr 2fr 2fr 1fr;
   padding: 40px 40px;
 }
+
+/* ================= HEADER ================= */
+.logo img {
+  height: 11px;
+}
+
+/* BURGER */
+.burger {
+  grid-column: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  align-items: flex-start;
+  position: relative;
+  z-index: 200;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+  display: block;
+  transform-origin: center;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* MENÜ */
+.nav-menu {
+  grid-column: 4;
+  display: none;
+  position: absolute;
+  gap: 70px;
+  top: 0;
+  right: 50px;
+  width: 220px;
+  height: 100%;
+  flex-direction: column;
+  justify-self: start;
+  justify-content: flex-start;
+  padding: 210px 0 0 0;
+  box-sizing: border-box;
+  z-index: 100;
+  align-items: flex-start;
+}
+
+.nav-menu.open {
+  display: flex;
+}
+
+.nav-menu a {
+  font-size: 35px;
+  letter-spacing: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  width: fit-content;
+  padding-bottom: 18px;
+  border-bottom: 3px solid white;
+  line-height: 1.57;
+  color: #ffffff;
+}
+
+.nav-menu a:hover {
+  color: #FF00BA;
+}
+
+/* Content-Section */
+.section:last-of-type .inner {
+  padding-top: 0px;
+}
+
+.section:first-of-type .inner {
+  padding-bottom: 0;
+}
+  
 
 /* ================= HEADER ================= */
 .logo img {
