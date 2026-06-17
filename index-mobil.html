@@ -521,25 +521,31 @@ body {
   
   /* 2 4eck */
   
-  .link-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-     /*left: 40px !important;*/
-  width: 50px !important;
-  height: 50px !important;
-
-  border: none;
+.link-content-2 {
+  display: none;
+  position: relative;
+  top: -20px;
+  left: 10px;
+  white-space: nowrap;
+  flex-direction: column;
+  gap: 10px;
   color: #FF00BA;
-
-   /* font-size: 6px !important; */                                                            /* Symbolgröße */
-  line-height: 1;
-
-  cursor: pointer;
-  box-sizing: border-box;
-
-    
+  text-transform: uppercase;
+  background: black;
 }
+
+.link-item-2 input:checked + label + .link-content-2 { display: flex; }
+
+.link-content-2 a {
+  color: #FF00BA !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1.0px;
+  padding: 5px 5px;
+}
+
+.link-content-2 a:hover { color: #FF00BA !important; }
 
 
 
@@ -1154,10 +1160,10 @@ padding: 40px 40px;
      Kommunikation. <br>
   </div>
   
-<div class="link-item">
+<div class="link-item-2">
   <input type="checkbox" id="links-toggle">
-  <label for="links-toggle" class="link-label">■</label>
-  <div class="link-content" style="text-align: left;">
+  <label for="links-toggle">■</label>
+  <div class="link-content-2">
     <strong style="color: #FF00BA !important; font-size: 12pt;">Online-Projekte</strong>
     <a href="https://www.atg-klettern.de" target="_blank">ATG-Klettern.de</a>
     <a href="https://www.hauptstadtcoach.de" target="_blank">Hauptstadtcoach.de</a>
@@ -1242,7 +1248,7 @@ padding: 40px 40px;
   
     <p class="contact">
 
-    STEFANIE SCHRÖPFER<br>
+    Stefanie Schröpfer<br>
       KOMMUNIKATIONSDESIGN<br><br>
       INFO@DES-SIGN.DE<br>
       0173.28 53 811<br>
