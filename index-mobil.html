@@ -815,27 +815,33 @@ body {
 
  /* ── VIERECK / LINKS ── */
 .link-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px;
+   position: relative;
+  grid-column: 2 / 4;
+  color: #FF00BA !important;
+  font-family: sans-serif;
+}
+
+  /* Checkbox verstecken */
+.link-item input {
+  display: none;
 }
 
 /* VIERECK bleibt unverändert */
 .link-label {
-  display: inline-block; 
   cursor: pointer;
-  font-size: 25px !important;
-  color: #FF00BA;
-  line-height: 1;
- padding: 2px 0;
-  margin: 0;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FF00BA !important;
+  text-align: right;
+  display: block;
+  float: right;
 }
 
 /* LINK-CONTAINER (Online Projekte) */
 .link-content {
-  position: relative;
+  display: none;
+  position: absolute;
   top: 40px !important;
   left: 40px !important;
 
