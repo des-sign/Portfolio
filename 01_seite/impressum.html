@@ -302,6 +302,64 @@ body {
 .col {
   text-align: left;
 }
+
+
+
+@media (max-width: 768px) {
+
+  body {
+    height: auto;
+    overflow-x: hidden;
+  }
+
+
+  
+/* Burger aus */
+  .burger {
+    display: none !important;
+  }
+
+  /* Pfeil im Header rechts oben */
+  .next {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+  }
+
+  .next:active {
+    transform: translateX(4px);
+  }
+  
+  
+  
+  /* ================= HEADER ================= */
+  .section:first-of-type .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  /* ================= CONTENT ================= */
+  .section:not(:first-of-type) .inner {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* alle Elemente sauber */
+  .section:not(:first-of-type) .inner > div {
+    width: 100%;
+  }
+
+
+  
 </style>
 
 
