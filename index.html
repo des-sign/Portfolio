@@ -1091,41 +1091,21 @@ body {
 
 
 <script>
-function toggleMenu() {
-  document.getElementById('burger').classList.toggle('open');
-  document.getElementById('navMenu').classList.toggle('open');
-}
+const mailBtn = document.getElementById('mailBtn');
+const mailModal = document.getElementById('mailModal');
+let isOpen = false;
 
-const iWrap = document.getElementById('iWrap');
-const iPunkt = document.getElementById('iPunkt');
-const iDot = document.getElementById('iDot');
+mailBtn.addEventListener('click', () => {
+  isOpen = !isOpen;
 
-iWrap.addEventListener('click', () => {
-  iWrap.classList.toggle('active');
+  if (isOpen) {
+    mailModal.classList.add('active');
+    mailBtn.textContent = '×';
+  } else {
+    mailModal.classList.remove('active');
+    mailBtn.textContent = '■';
+  }
 });
-
-iWrap.addEventListener('mouseleave', () => {
-  iWrap.classList.remove('active');
-});
-
-iWrap.addEventListener('mousemove', (e) => {
-  if (!iWrap.classList.contains('active')) return;
-  const rect = iPunkt.getBoundingClientRect();
-  let x = e.clientX - rect.left;
-  let y = e.clientY - rect.top;
-
-  x = Math.max(0, Math.min(rect.width, x));
-  y = Math.max(0, Math.min(rect.height, y));
-
-  iDot.style.left = x + 'px';
-  iDot.style.top = y + 'px';
-});
-</script>
-
-<script>
-if (window.innerWidth <= 768) {
-  window.location.href = "index-mobile.html";
-}
 
 mailModal.addEventListener('click', (e) => {
   if (e.target === mailModal) {
@@ -1134,7 +1114,6 @@ mailModal.addEventListener('click', (e) => {
     isOpen = false;
   }
 });
-  
 </style>
 
 </head>
