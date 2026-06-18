@@ -1271,7 +1271,7 @@ body {
   color: #FF00BA;
 }
 
-</style>
+
 
 
 
@@ -1380,6 +1380,86 @@ body {
   color: black;
 }
 
+
+  /* ================= 3. VIERECK ================= */
+.link-item {
+  position: relative;
+  grid-column: 2 / 4;
+  color: #FF00BA !important;
+  font-family: sans-serif;
+}
+
+/* Checkbox verstecken */
+.link-item input {
+  display: none;
+}
+
+/* ■ Label */
+.link-item label {
+  
+  cursor: pointer;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FF00BA !important;
+  text-align: right;
+  display: block;
+  float: right;
+}
+
+/* LINKS versteckt */
+.link-content {
+  display: none;
+  position: absolute;
+  top: 40px;                                                              /* hier */
+  left: 40px;
+  white-space: nowrap;
+  flex-direction: column;
+  gap: 6px;
+  color: #FF00BA !important;
+  text-transform: uppercase;
+}
+
+
+/* LINKS sichtbar wenn aktiv */
+.link-item input:checked + label + .link-content {
+  display: flex;
+}
+
+/* LINKS styling */
+.link-content a {
+  color: #FF00BA !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1.0px;
+}
+
+.link-content a:hover {
+  color: #FF00BA !important;
+}
+
+
+  
+  
+  
+  /* ── Impressum ── */                                                             /* ── Impressum ── */  
+
+.impressum {
+  text-decoration: none;   /* kein Unterstrich */
+  border: none;
+padding: 40px 40px;
+  
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 5px;
+
+  color: #FF00BA;
+
+}
+
+
+  
 
                   /* ================= IMPRESSUM ================= */
     .impressum-box { 
