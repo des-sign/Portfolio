@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -88,7 +87,7 @@ body {
   flex-direction: column;
   justify-self: start;
   justify-content: flex-start;
-  padding: 150px 0 0 0;
+  padding: 180px 0 0 0;
   box-sizing: border-box;
   z-index: 100;
   align-items: flex-start;
@@ -160,7 +159,7 @@ body {
 .hero-toggle {
   position: relative;
   align-self: start;
-  padding-top: 410px;
+  padding-top: 412px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -527,25 +526,11 @@ body {
 }
 
 /* ================= VIERECK ================= */
-
-/* Container */
 .link-item {
   position: relative;
   grid-column: 2 / 4;
-  font-family: sans-serif;
-}
-
-/* Content (DEIN -2 Element) */
-.link-item .link-content-2 {
-  display: none;              /* WICHTIG: fehlte bei dir */
-  position: absolute;
-  top: 35px;
-  left: -60px;
-  white-space: nowrap;
-  flex-direction: column;
-  gap: 6px;
   color: #FF00BA !important;
-  text-transform: uppercase;
+  font-family: sans-serif;
 }
 
 /* Checkbox verstecken */
@@ -555,6 +540,7 @@ body {
 
 /* ■ Label */
 .link-item label {
+  
   cursor: pointer;
   font-size: 75px;
   letter-spacing: 2px;
@@ -565,23 +551,38 @@ body {
   float: right;
 }
 
-/* aktiv → sichtbar */
-.link-item input:checked + label + .link-content-2 {
+/* LINKS versteckt */
+.link-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: -60px;
+  white-space: nowrap;
+  flex-direction: column;
+  gap: 6px;
+  color: #FF00BA !important;
+  text-transform: uppercase;
+}
+
+
+/* LINKS sichtbar wenn aktiv */
+.link-item input:checked + label + .link-content {
   display: flex;
 }
 
-/* Links styling */
-.link-item .link-content-2 a {
+/* LINKS styling */
+.link-content a {
   color: #FF00BA !important;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 13px;
-  letter-spacing: 1px;
+  letter-spacing: 1.0px;
 }
 
-.link-item .link-content-2 a:hover {
-  opacity: 0.7;
+.link-content a:hover {
+  color: #FF00BA !important;
 }
+
 /* ================= Hashtags ================= */
 .text-block {
   padding: 0 350px 0 300px;
@@ -1192,11 +1193,11 @@ body {
   line-height: 1.5;
 }
 
-/* ================= VIERECK ================= */
+/* ================= VIERECK 2 ================= */
+
 .link-item {
   position: relative;
   grid-column: 2 / 4;
-  color: #FF00BA !important;
   font-family: sans-serif;
 }
 
@@ -1205,9 +1206,8 @@ body {
   display: none;
 }
 
-/* ■ Label */
+/* Label (■) */
 .link-item label {
-  
   cursor: pointer;
   font-size: 75px;
   letter-spacing: 2px;
@@ -1218,37 +1218,34 @@ body {
   float: right;
 }
 
-/* LINKS versteckt */
-.link-content {
+/* Content (DEIN -2 ELEMENT) */
+.link-item .link-content-2 {
   display: none;
   position: absolute;
-  top: 40px;
+  top: 35px;
   left: -60px;
-  line-height: 1.5;
   white-space: nowrap;
   flex-direction: column;
   gap: 6px;
-  color: #FF00BA !important;
   text-transform: uppercase;
+  color: #FF00BA !important;
 }
 
-
-/* LINKS sichtbar wenn aktiv */
-.link-item input:checked + label + .link-content {
+/* aktiv */
+.link-item input:checked + label + .link-content-2 {
   display: flex;
 }
 
-/* LINKS styling */
-.link-content a {
+/* Links */
+.link-item .link-content-2 a {
   color: #FF00BA !important;
-  text-transform: uppercase;
   text-decoration: none;
   font-size: 13px;
-  letter-spacing: 1.0px;
+  letter-spacing: 1px;
 }
 
-.link-content a:hover {
-  color: #FF00BA !important;
+.link-item .link-content-2 a:hover {
+  opacity: 0.7;
 }
 
 /* ================= Hashtags ================= */
@@ -1333,122 +1330,6 @@ body {
   color: #fffcfe;
 }
 
-
-
-  /* ================= MAIL MODAL ================= */
-
-
-   .mail-square {
-  position: fixed;
-  bottom: 120px;
-  left: 40px;
-
-  width: 25px;
-  height: 25px;
-
-  all: unset;
-  font-family: "Roboto Flex", sans-serif;
-  font-size: 20pt;
-  font-weight: 400;
-  color: #FF00BA;
-
-  cursor: pointer;
-  z-index: 9999;
-}
-
-  
-.mail-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-  display: none;              /* standard: versteckt */
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 9998;
-}
-
-.mail-modal.active {
-  display: flex;              /* sichtbar wenn aktiv */
-}
-
-
- 
-
-  
-.mail-box {
-
-  border: 2px solid #FF00BA;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.mail-box h3 {
-  font-family: "Roboto Flex", sans-serif;
-  font-size: 13pt;
-  font-weight: 400;
-  margin-bottom: 15px;
-  color: #FF00BA;
-}
-
-/* Inputs */
-.mail-box input,
-.mail-box textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
-  background: black;
-  border: 1px solid #FF00BA;
-  color: white;
-  font-family: "Roboto Flex", sans-serif;
-  font-size: 13px;
-  box-sizing: border-box;
-}
-
-.mail-box textarea {
-  min-height: 100px;
-  resize: none;
-}
-
-/* Submit Button */
-.mail-box button {
-  width: 100%;
-  padding: 10px;
-  background: #FF00BA;
-  border: none;
-  color: black;
-  font-family: "Roboto Flex", sans-serif;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.mail-box button:hover {
-  background: white;
-  color: black;
-}
-
-
-                  /* ================= IMPRESSUM ================= */
-    .impressum-box { 
-      margin-left: 40; 
-      font-size: 5px;
-      text-decoration: none;
-      padding: 40px;
-  }  
-  
-.impressum-box:hover { 
-  background-color: #000000; 
-  color: white; 
-  padding: 40px;
-  font-size: 5px;
-  
-  }
-
-  
 </style>
 
 </head>
@@ -1648,13 +1529,16 @@ body {
 <!-- TEXT + VIERECK -->
 <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 100px 300px 100px 300px; cursor: pointer;" title="klick mich!">
 
+  
   <!-- VIERECK / LINKS -->
-  <div class="link-item" style="margin-left: -165px; text-align: right; width: 200px;">
-    <input type="checkbox" id="links-toggle">
-      <label for="links-toggle"></label>
+<div class="link-item">
+  <input type="checkbox" id="links-toggle">
+
+  <label for="links-toggle"></label>
+
   <div class="link-content-2">
       
-      <strong style="color: #FF00BA !important;">Online-Projekte</strong>
+      <strong style="color: #FF00BA !important;">Online-Projekte</strong><br>
       <a href="https://www.atg-klettern.de" target="_blank">ATG-Klettern.de</a>
       <a href="https://www.hauptstadtcoach.de" target="_blank">Hauptstadtcoach.de</a>
       <a href="https://westgarten-leipzig.de" target="_blank">Westgarten-Leipzig.de</a>
@@ -1840,6 +1724,7 @@ body {
   
     <br>
     <p class="contact">
+      Stefanie Schröpfer<br>
       KOMMUNIKATIONSDESIGN<br><br>
       INFO@DES-SIGN.DE<br>
       0173.28 53 811<br>
@@ -1920,5 +1805,3 @@ mailModal.addEventListener('click', (e) => {
 </style>
 
 </head>
-
-
