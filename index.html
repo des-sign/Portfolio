@@ -1,11 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>des_sign</title>
-  
-<script>if(window.innerWidth<=768||/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)){location.replace('index-mobil.html');}</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 
 <style>
@@ -22,6 +22,7 @@ body {
   background: black;
   color: white;
   font-family: 'Roboto Flex', sans-serif;
+  
 }
 
 /* FORCE WHITE */
@@ -415,6 +416,7 @@ body {
   text-transform: uppercase;
   padding: 10px 0;
   cursor: pointer;
+  
 }
 
 .accordion-label::after {
@@ -435,6 +437,7 @@ body {
   padding-left: 150px;
   padding-bottom: 10px;
   transition: max-height 0.4s ease;
+  
 }
 
 .accordion-toggle:checked + .accordion-label + .service-content {
@@ -446,6 +449,7 @@ body {
   font-size: 15px;
   letter-spacing: 1px;
     line-height: 1.7;
+    
 }
 
 .service-content p:hover {
@@ -525,12 +529,13 @@ body {
   line-height: 1.5;
 }
 
-/* ================= VIERECK 2 ================= */
-
+/* ================= VIERECK ================= */
 .link-item {
   position: relative;
   grid-column: 2 / 4;
+  color: #FF00BA !important;
   font-family: sans-serif;
+  
 }
 
 /* Checkbox verstecken */
@@ -538,8 +543,9 @@ body {
   display: none;
 }
 
-/* Label (■) */
+/* ■ Label */
 .link-item label {
+  
   cursor: pointer;
   font-size: 75px;
   letter-spacing: 2px;
@@ -548,36 +554,40 @@ body {
   text-align: right;
   display: block;
   float: right;
+  
 }
 
-/* Content (DEIN -2 ELEMENT) */
-.link-item .link-content-2 {
+/* LINKS versteckt */
+.link-content {
   display: none;
   position: absolute;
   top: 35px;
-  left: 40px;
+  left: -60px;
   white-space: nowrap;
   flex-direction: column;
   gap: 6px;
-  text-transform: uppercase;
   color: #FF00BA !important;
+  text-transform: uppercase;
+
 }
 
-/* aktiv */
-.link-item input:checked + label + .link-content-2 {
+
+/* LINKS sichtbar wenn aktiv */
+.link-item input:checked + label + .link-content {
   display: flex;
 }
 
-/* Links */
-.link-item .link-content-2 a {
+/* LINKS styling */
+.link-content a {
   color: #FF00BA !important;
+  text-transform: uppercase;
   text-decoration: none;
   font-size: 13px;
-  letter-spacing: 1px;
+  letter-spacing: 1.0px;
 }
 
-.link-item .link-content-2 a:hover {
-  opacity: 0.7;
+.link-content a:hover {
+  color: #FF00BA !important;
 }
 
 /* ================= Hashtags ================= */
@@ -619,7 +629,7 @@ body {
   height: 25px;
 
 
-  margin-left: 465px;
+   margin-left: 465px;
 
   border: 2px solid #FF00BA;
   color: #FF00BA;
@@ -631,7 +641,6 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-  
 .contact {
   padding-left: 520px;
   font-family: 'Roboto', sans-serif;
@@ -639,12 +648,11 @@ body {
   font-size: 16px;
   line-height: 2;
 }
-  
+
 .impressum-box:hover {
   background-color: #FF00BA;
   color: white;
 }
-  
 </style>
 
 <!-- KOORDINATEN --> 
@@ -662,11 +670,14 @@ body {
   color: #fffcfe;
 }
 
+@media (max-width: 768px) {
+  body {
+    zoom: 0.40;
+    overflow-x: hidden;
+  } 
 
-
-
-
-
+}
+</body>
 </style>
 
 </head>
@@ -675,10 +686,12 @@ body {
 
 
 
+<!-- HTML -->
+<!-- HTML -->
+<!-- HTML -->
+<!-- HTML -->
 
 
-
-  
 
 <!-- HEADER -->
 <div class="section" style="position: relative;">
@@ -715,7 +728,7 @@ body {
 <div class="contact-wrap">
   <div class="contact-pills">
 
-    <a href="mailto:INFO@DES-SIGN.DE" class="pill">
+    <a href="mailto:DES_SIGN@WEB.DE" class="pill">
       <span>MAIL</span>
     </a>
 
@@ -754,8 +767,8 @@ body {
   
   <label for="toggle" title="klick mich!"></label>
           <div class="link-content">
-            MIT EMPATHIE <br>
-            &amp; DETAILLIEBE<br>
+            MIT EMPATHIE<br>
+            DETAILLIEBE<br>
             INDIVIDUELLE<br>
             KOMMUNIKAT-<br>
             IONSPROJEKTE<br>
@@ -790,18 +803,18 @@ body {
 <!-- GALLERY -->
 <div class="section gallery">
   <div class="inner">
-    <a href="01_seite/c_b_typo.html" class="card"><img src="../04_portfolio/c_christian_mockup.jpg"><div class="overlay"></div></a>
-    <a href="01_seite/typo_design.html" class="card"><img src="../04_portfolio/typo_design_plakat.jpg"><div class="overlay"></div></a>
-    <a href="01_seite/k_k.html" class="card"><img src="../04_portfolio/kurzundknackig_logo.jpg"><div class="overlay"></div></a>
-    <a href="01_seite/aak.html" class="card"><img src="../04_portfolio/Logo_AK_Mockup.jpg"><div class="overlay"></div></a>
-    <a href="01_seite/arab_logo.html" class="card"><img src="../04_portfolio/arabisch_logo_petrol.jpg"><div class="overlay"></div></a>
-    <a href="01_seite/fengshui.html" class="card"><img src="../04_portfolio/fengshui.png"><div class="overlay"></div></a>
-    <a href="01_seite/fischer.html" class="card"><img src="../04_portfolio/Cover-Entwuerfe_Mein_Fischer.jpg"><div class="overlay"></div></a>
-    <a href="01_seite/takeashot.html" class="card"><img src="../04_portfolio/takeashot_cover_1.jpg"><div class="overlay"></div></a>
-    <a href="01_seite/philia.html" class="card"><img src="../04_portfolio/philia.jpg"><div class="overlay"></div></a>
-    <a href="01_seite/scdhfk.html" class="card"><img src="../04_portfolio/scdhfk_plakat.jpg"><div class="overlay"></div></a>
-    <a href="01_seite/otto.html" class="card"><img src="../04_portfolio/Otto Lilienthal.jpg"><div class="overlay"></div></a>
-    <a href="01_seite/theater.html" class="card"><img src="../04_portfolio/Theater_Flyer.jpg"><div class="overlay"></div></a>
+    <a href="c_b_typo.html" class="card"><img src="../04_portfolio/c_christian_mockup.jpg"><div class="overlay"></div></a>
+    <a href="typo_design.html" class="card"><img src="../04_portfolio/typo_design_plakat.jpg"><div class="overlay"></div></a>
+    <a href="k_k.html" class="card"><img src="../04_portfolio/kurzundknackig_logo.jpg"><div class="overlay"></div></a>
+    <a href="aak.html" class="card"><img src="../04_portfolio/Logo_AK_Mockup.jpg"><div class="overlay"></div></a>
+    <a href="arab_logo.html" class="card"><img src="../04_portfolio/arabisch_logo_petrol.jpg"><div class="overlay"></div></a>
+    <a href="fengshui.html" class="card"><img src="../04_portfolio/fengshui.png"><div class="overlay"></div></a>
+    <a href="fischer.html" class="card"><img src="../04_portfolio/Cover-Entwuerfe_Mein_Fischer.jpg"><div class="overlay"></div></a>
+    <a href="takeashot.html" class="card"><img src="../04_portfolio/takeashot_cover_1.jpg"><div class="overlay"></div></a>
+    <a href="philia.html" class="card"><img src="../04_portfolio/philia.jpg"><div class="overlay"></div></a>
+    <a href="scdhfk.html" class="card"><img src="../04_portfolio/scdhfk_plakat.jpg"><div class="overlay"></div></a>
+    <a href="otto.html" class="card"><img src="../04_portfolio/Otto Lilienthal.jpg"><div class="overlay"></div></a>
+    <a href="theater.html" class="card"><img src="../04_portfolio/Theater_Flyer.jpg"><div class="overlay"></div></a>
   </div>
 </div>
 
@@ -867,12 +880,11 @@ body {
 <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 100px 300px 100px 300px; cursor: pointer;" title="klick mich!">
 
   <!-- VIERECK / LINKS -->
-
   <div class="link-item" style="margin-left: -165px; text-align: right; width: 200px;">
     <input type="checkbox" id="links-toggle">
-<label for="links-toggle">■</label> 
-    <div class="link-content-2">
-    
+    <label for="links-toggle" class="link-label">■</label>
+    <div class="link-content" style="text-align: right;">
+      
       <strong style="color: #FF00BA !important;">Online-Projekte</strong>
       <a href="https://www.atg-klettern.de" target="_blank">ATG-Klettern.de</a>
       <a href="https://www.hauptstadtcoach.de" target="_blank">Hauptstadtcoach.de</a>
@@ -913,8 +925,8 @@ body {
     <div class="entry-text"> 
       seit 2021<br>
       <strong>Selbstständige Designerin</strong><br>
-      Energiesektor, Eis-Manufaktur
-      Veranstaltungsbranche, Sport- &amp; Eventprojekte, Agenturen etc.<br><br><br><br>
+      Energiesektor, Eis-Manufaktur<br>
+      Veranstaltungsbranche, Sport-<br>&amp; Eventprojekte, Agenturen etc.<br><br><br><br>
     </div>
 
     <div class="number-wrapper">
@@ -1038,41 +1050,29 @@ body {
   </div>
 </div>
 
-<!-- KONTAKT -->
-<div style="padding: 40px 40px 80px 40px;">
-
-<button class="mail-square" id="mailBtn">■</button>
-            <span class="material-symbols-outlined" style="color: white; font-size: 25px; top: 10px;">arrow_back</span>
-<div class="mail-modal" id="mailModal">
-  <div class="mail-box">
-    <h3>Schreib mir eine Mail</h3>
-
-    <form action="mailto:info@DES-SIGN.DE" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Name">
-      <input type="email" name="email" placeholder="E-Mail">
-      <textarea name="message" placeholder="Nachricht"></textarea>
-      <button type="submit">Senden</button>
-    </form>
-  </div>
-</div>
-
-  
-    <br>
-    <p class="contact">
-      KOMMUNIKATIONSDESIGN<br><br>
-      INFO@DES-SIGN.DE<br>
-      0173.28 53 811<br>
-      04177 LEIPZIG
-    </p>
-  </div>
-</div>
-
-  <!-- HASHTAG TEXT -->
+<!-- HASHTAG TEXT -->
 <div style="padding: 0 350px 0 300px; font-family: 'Temeraire'; font-size: 90px; line-height: 1.5;">
   #Brand  #Grafik  <br>
   #Digital #Print
 </div>
 
+<br><br><br><br>
+
+<!-- KONTAKT -->
+<div class="story-grid">
+  <div>
+      <!-- Impressum Icon direkt UNTER dem Kontakt -->
+    <a href="impressum.html" class="impressum-box" title="Impressum">
+      i
+    </a>
+    <br>
+    <p class="contact">
+      KOMMUNIKATIONSDESIGN<br><br>
+      DES_SIGN@WEB.DE<br>
+      04177 LEIPZIG
+    </p>
+  </div>
+</div>
 
 <br><br><br><br>
 
@@ -1123,19 +1123,5 @@ iWrap.addEventListener('mousemove', (e) => {
 });
 </script>
 
-<script>
-if (window.innerWidth <= 768) {
-  window.location.href = "index-mobile.html";
-}
-
-mailModal.addEventListener('click', (e) => {
-  if (e.target === mailModal) {
-    mailModal.classList.remove('active');
-    mailBtn.textContent = '■';
-    isOpen = false;
-  }
-});
-  
-</style>
-
-</head>
+</body>
+</html>
