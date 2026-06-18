@@ -525,11 +525,11 @@ body {
   line-height: 1.5;
 }
 
-/* ================= VIERECK ================= */
+/* ================= VIERECK 2 ================= */
+
 .link-item {
   position: relative;
   grid-column: 2 / 4;
-  color: #FF00BA !important;
   font-family: sans-serif;
 }
 
@@ -538,9 +538,8 @@ body {
   display: none;
 }
 
-/* ■ Label */
+/* Label (■) */
 .link-item label {
-  
   cursor: pointer;
   font-size: 75px;
   letter-spacing: 2px;
@@ -551,8 +550,8 @@ body {
   float: right;
 }
 
-/* LINKS versteckt */
-.link-content {
+/* Content (DEIN -2 ELEMENT) */
+.link-item .link-content-2 {
   display: none;
   position: absolute;
   top: 35px;
@@ -560,27 +559,25 @@ body {
   white-space: nowrap;
   flex-direction: column;
   gap: 6px;
-  color: #FF00BA !important;
   text-transform: uppercase;
+  color: #FF00BA !important;
 }
 
-
-/* LINKS sichtbar wenn aktiv */
-.link-item input:checked + label + .link-content {
+/* aktiv */
+.link-item input:checked + label + .link-content-2 {
   display: flex;
 }
 
-/* LINKS styling */
-.link-content a {
+/* Links */
+.link-item .link-content-2 a {
   color: #FF00BA !important;
-  text-transform: uppercase;
   text-decoration: none;
   font-size: 13px;
-  letter-spacing: 1.0px;
+  letter-spacing: 1px;
 }
 
-.link-content a:hover {
-  color: #FF00BA !important;
+.link-item .link-content-2 a:hover {
+  opacity: 0.7;
 }
 
 /* ================= Hashtags ================= */
@@ -1535,8 +1532,8 @@ body {
   <!-- VIERECK / LINKS -->
   <div class="link-item" style="margin-left: -165px; text-align: right; width: 200px;">
     <input type="checkbox" id="links-toggle">
-    <label for="links-toggle" class="link-label">■</label>
-    <div class="link-content" style="text-align: right;">
+<label for="links-toggle"></label> 
+    <div class="link-content-2">
       
       <strong style="color: #FF00BA !important;">Online-Projekte</strong>
       <a href="https://www.atg-klettern.de" target="_blank">ATG-Klettern.de</a>
