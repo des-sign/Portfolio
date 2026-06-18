@@ -527,34 +527,17 @@ body {
 }
 
 /* ================= VIERECK ================= */
+
+/* Container */
 .link-item {
   position: relative;
   grid-column: 2 / 4;
-  color: #FF00BA !important;
   font-family: sans-serif;
 }
 
-/* Checkbox verstecken */
-.link-item input {
-  display: none;
-}
-
-/* ■ Label */
-.link-item label {
-  
-  cursor: pointer;
-  font-size: 75px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #FF00BA !important;
-  text-align: right;
-  display: block;
-  float: right;
-}
-
-/* LINKS versteckt */
-.link-content {
-  display: none;
+/* Content (DEIN -2 Element) */
+.link-item .link-content-2 {
+  display: none;              /* WICHTIG: fehlte bei dir */
   position: absolute;
   top: 35px;
   left: -60px;
@@ -565,25 +548,40 @@ body {
   text-transform: uppercase;
 }
 
+/* Checkbox verstecken */
+.link-item input {
+  display: none;
+}
 
-/* LINKS sichtbar wenn aktiv */
-.link-item input:checked + label + .link-content {
+/* ■ Label */
+.link-item label {
+  cursor: pointer;
+  font-size: 75px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FF00BA !important;
+  text-align: right;
+  display: block;
+  float: right;
+}
+
+/* aktiv → sichtbar */
+.link-item input:checked + label + .link-content-2 {
   display: flex;
 }
 
-/* LINKS styling */
-.link-content a {
+/* Links styling */
+.link-item .link-content-2 a {
   color: #FF00BA !important;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 13px;
-  letter-spacing: 1.0px;
+  letter-spacing: 1px;
 }
 
-.link-content a:hover {
-  color: #FF00BA !important;
+.link-item .link-content-2 a:hover {
+  opacity: 0.7;
 }
-
 /* ================= Hashtags ================= */
 .text-block {
   padding: 0 350px 0 300px;
