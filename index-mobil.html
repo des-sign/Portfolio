@@ -449,46 +449,22 @@ body {
 ::selection { background: transparent; color: #FF00BA; }
   
 
-/* ================= STORY ================= */
+
+
+  /* ================= STORY ================= */
 .story-grid {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 1fr;
   padding: 40px 0 40px 0;
 }
 
-.number-wrapper { position: relative; display: inline-block; }
-
-.number-wrapper img { 
-  display: block; 
-  width: auto; 
-  height: 30px; 
-  display: block; }
-
-.number-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scaleX(0);
-  width: 50%;
-  height: auto;
-  background-color: #FF00BA;
-  transform-origin: center;
-  transition: transform 0.3s ease;
-}
-
-.number-wrapper:hover::before { transform: translate(-50%, -50%) scaleX(1); }
-
-
 .number-wrapper {
   position: relative;
   display: inline-block;
-}
-
-.number-wrapper img { 
-  display: block; 
-  width: auto; 
-  height: 30px; 
+  font-family: "Temeraire";
+  font-size: 40pt;
+  line-height: 1;
+  letter-spacing: 4px;
 }
 
 .number-wrapper::before {
@@ -507,28 +483,6 @@ body {
 
 .number-wrapper:hover::before {
   transform: translate(-50%, -50%) scaleX(1);
-}
-
-  
-.entry-text {
-  text-align: left;
-  line-height: 1.5;
-  font-size: 15px;
-  font-weight: 300;
-  margin-bottom: 0;
-  margin-top: 10px;
-}
-
-.entry-text strong { font-weight: 700; }
-
-.coords {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 10px;
-  line-height: 1.5;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  color: #fffcfe;
 }
 
 
@@ -821,11 +775,10 @@ body {
     gap: 0 24px;
   }
 
-  .number-wrapper img {
-    height: 32px !important;
-    width: auto;
-    display: block;
-  }
+.number-wrapper {
+  font-size: 28pt;
+  letter-spacing: 3px;
+}
 
   
   /* leere Randspalten (1 + 4) weg */
@@ -835,7 +788,6 @@ body {
   }
 
   .entry-text { font-size: 12px; }
-  .number-wrapper img { height: 70px; }
 
     /* ── TEXT-BLOCK ── */
   .hey-text {
@@ -1222,31 +1174,31 @@ padding: 40px 40px;
 <div class="story-grid">
   <div></div>
   <div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/11-1.png"></div>
+    <div class="number-wrapper">11</div>
     <div class="entry-text">seit 2021<br><strong>Selbstständige Designerin</strong><br>Energiesektor, <br>Eis-Manufaktur,<br>Veranstaltungsbranche, Sport- &amp; Eventprojekte, Agenturen etc.<br><br><br><br></div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/09-1.png"></div>
+    <div class="number-wrapper">09</div>
     <div class="entry-text">2015 — 2018<br><strong>Bachelor of Arts in<br>Kommunikationsdesign</strong><br>Designhochschule<br>Vitruvius Hochschule Leipzig<br><br><br><br></div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/07.png"></div>
+    <div class="number-wrapper">07</div>
     <div class="entry-text">2014 — 2015<br><strong>Mediendesign</strong><br>Corporate Design &amp; Identity<br><br><br><br><br><br></div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/05.png"></div>
+    <div class="number-wrapper">05</div>
     <div class="entry-text">2008 — 2012<br><strong>Außenwerbung &amp; Promotion</strong><br>Veranstaltungen in Mittelthüringen<br><br><br><br></div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/03.png"></div>
+    <div class="number-wrapper">03</div>
     <div class="entry-text">2008 — 2009<br><strong>Gestaltungstechnische Assistentin</strong><br>Walter‑Gropius‑Schule Erfurt<br><br><br><br><br></div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/01.png"></div>
+    <div class="number-wrapper">01</div>
     <div class="entry-text">2003 — 2004<br><strong>Orientierungsjahr</strong><br>Informationstechnik<br>Andreas‑Gordon‑Schule Erfurt<br><br><br><br></div>
   </div>
   <div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/10.png"></div>
+    <div class="number-wrapper">10</div>
     <div class="entry-text">2019 — 2020<br><strong>Kommunikationsdesign</strong><br>Web- &amp; Grafik-Design,<br>Innenarchitektur, Leitsystem,<br>Raum-Design<br><br><br><br><br><br></div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/08.png"></div>
+    <div class="number-wrapper">08</div>
     <div class="entry-text">2015 — 2016<br><strong>Retail</strong><br>Marketing &amp; Verkauf<br><br><br><br><br><br><br></div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/06.png"></div>
+    <div class="number-wrapper">06</div>
     <div class="entry-text">2010 — 2013<br><strong>Mediengestalterin</strong><br>Digital - Print<br>Walter‑Gropius‑Schule Erfurt<br>Druckerei Aschersleben<br><br><br><br></div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/04.png"></div>
+    <div class="number-wrapper">04</div>
     <div class="entry-text">2009 — 2010<br><strong>Gestaltungs- &amp; Medientechnik</strong><br>Drogen- und Suchtprävention<br><br><br><br></div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/02.png"></div>
+    <div class="number-wrapper">02</div>
     <div class="entry-text">2004 — 2008<br><strong>Berufliches Gymnasium</strong><br>Gestaltungs- &amp; Medientechnik<br>Walter‑Gropius‑Schule Erfurt<br><br><br><br></div>
-    <div class="number-wrapper"><img src="https://b15esk4.myrdbx.io/wp-content/uploads/2026/04/12.png"></div>
+    <div class="number-wrapper">12</div>
     <div class="entry-text">Geboren in<br><strong>Erfurt</strong></div>
   </div>
   <div></div>
