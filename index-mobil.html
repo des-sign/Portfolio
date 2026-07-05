@@ -434,9 +434,19 @@ body {
 }
 
 .service-content p {
-  padding-left: 1.5em;
-  text-indent: -1.5em;
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  column-gap: 18px;
+
+  margin: 0 0 18px;
+  padding: 0;
+
+  line-height: 1.45;
 }
+
+.service-content p::before {
+  content: "‣";
+} 
   
 .accordion-toggle:checked + .accordion-label + .service-content { max-height: 800px; }
 
@@ -447,6 +457,7 @@ body {
   
 
 
+  
 
   /* ================= STORY ================= */
 .story-grid {
@@ -1114,12 +1125,19 @@ padding: 40px 40px;
   <div class="service-item">
     <input type="checkbox" id="brand" class="accordion-toggle">
     <label for="brand" class="accordion-label"><h2 style="font-weight:600;">BRAND</h2></label>
-    <div class="service-content">
-      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Entwicklung von Corporate Design als strategische Markenbasis</p>
-      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Gestaltung von Logo / Signet als prägnantes Wiedererkennungsmerkmal</p>
-      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Definition einer konsistenten Typografie zur visuellen Einheit</p>
-      <p>&nbsp;‣&nbsp;&nbsp;&nbsp; Aufbau einer klaren Farbgestaltung zur Markenführung und Differenzierung</p><br>
-    </div>
+
+    
+   <div class="service-content">
+    <p>Entwicklung von Corporate Design als strategische Markenbasis</p>
+
+    <p>Gestaltung von Logo / Signet als prägnantes Wiedererkennungsmerkmal</p>
+
+    <p>Definition einer konsistenten Typografie zur visuellen Einheit</p>
+
+    <p>Aufbau einer klaren Farbgestaltung zur Markenführung und Differenzierung</p>
+</div>
+
+    
   </div>
   <div class="service-item">
     <input type="checkbox" id="grafik" class="accordion-toggle">
@@ -1151,10 +1169,12 @@ padding: 40px 40px;
   </div>
 </div>
 
+
+  
 <!-- TEXT + VIERECK -->
 <div class="hey-text" style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px 10px 20px 10px; cursor: pointer;" title="klick mich!">
 
-   <div style="font-family: 'Temeraire'; font-size: 80px; line-height: 2.0;">
+   <div style="font-family: 'Temeraire'; font-size: 75px; line-height: 1.7;">
     Hey, ich bin <br>
      Designerin mit <br>
      Schwerpunkt <br>
