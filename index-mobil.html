@@ -76,6 +76,16 @@ body {
 .burger.open span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
 .burger.open span:nth-child(2) { transform: translateY(-5px) rotate(-45deg); }
 
+  .burger {
+  transition: transform 0.3s ease;
+}
+
+.burger.open {
+  transform: scale(0.75);
+}
+
+  
+
 .nav-menu {
   grid-column: 4;
   display: none;
